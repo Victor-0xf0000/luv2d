@@ -1,21 +1,20 @@
 #define SDL_MAIN_HANDLED
 #include <SDL2/SDL.h>
+#include <engine/graphics/renderer.hpp>
+#include <engine/engine.hpp>
+#include <engine/window.hpp>
 #include <stdio.h>
 
 int main(int argc, const char** argv)
 {
-  printf("LUV2D ENGINE!\n");
+  luv::Engine engine;
+  engine.start();
+  engine.get_renderer()->set_vsync(true);
+  engine.get_window()->change_title("LOVELY TEST");
+  engine.get_window()->set_resizable(true);
   
-  SDL_Init(SDL_INIT_VIDEO);
-
-  SDL_Window* window = SDL_CreateWindow("Luv2D", SDL_WINDOWPOS_CENTERED, 
-      SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN);
-  
-  SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, 
-      SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
-
   bool should_quit = false;
-  
+
   while (!should_quit)
   {
     SDL_Event e;
@@ -26,16 +25,16 @@ int main(int argc, const char** argv)
       case SDL_QUIT:
         should_quit = true;
         break;
+      case SDL_WINDOWEVENT:
+        if (e.window.event == SDL_WINDOWEVENT_RESIZED)
+        {
+          engine.get_window()->resize(e.window.data1, e.window.data2);
+        }
+        break;
       }
     }
-
-    SDL_SetRenderDrawColor(renderer, 40, 4, 30, 255);
-    SDL_RenderClear(renderer);
-    SDL_RenderPresent(renderer);
+    
   }
 
-  SDL_DestroyRenderer(renderer);
-  SDL_DestroyWindow(window);
-  
   return 0;
 }
