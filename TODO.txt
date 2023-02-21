@@ -5,8 +5,7 @@
   [] Sprites
   [] Input Handler
   [] memory arenas
-  [] Entity Manager
+  [] ECS
   [] Assets Manager
-  [] Tileset
 -- Others
   [] exporting engine to be used (dll? static library?)
