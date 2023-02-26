@@ -7,66 +7,6 @@
 #include <string>
 #include <bitset>
 
-// Prototype, idk
-
-// -------------------------------
-//#include <iostream>
-//#include <memory>
-//#include <string>
-//
-//enum eventType
-//{
-//    windowResize,
-//    windowClose,
-//    keyPressed,
-//    keyReleased,
-//    keyHold
-//};
-//
-//struct ApplicationEvent
-//{
-//    
-//}
-//
-//struct App
-//{
-//    void event(Event& e)
-//    {
-//        if (e.containsType(WINDOW_RESIZED))
-//        {
-//            this->window.width = e.appEvent.new_width;
-//            this->window.height = e.appEvent.new_height;
-//        }
-//        
-//        if (e.containsType(KEY_PRESS))
-//        {
-//            // one time press
-//            if (e.keyEvent.wasKeyPressed(KeyCode::e))
-//            {
-//                
-//            }
-//            // continous press
-//            if (e.keyEvent.isKeyHold(KeyCode::w))
-//            {
-//                
-//            }
-//        }
-//        // I can ommit e.containsType too
-//        if (e.keyEvent.wasKeyReleased(KeyCode::x))
-//        {
-//            
-//        }
-//    }
-//}
-//
-//struct Event
-//{
-//    ApplicationEvent apEvent;
-//    KeyEvent keyEvent;
-//    MouseEvent mouseEvent;
-//};
-// --------------------------
-
 namespace luv
 {
   enum EventCategory

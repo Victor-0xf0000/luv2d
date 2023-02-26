@@ -1,8 +1,11 @@
 -- Engine
   [x] Window
   [x] Renderer
-  [x] Event
-    [] Mouse wheel movement support
+  [] Event
+    [x] Application events
+    [x] Key events
+    [] Mouse events
+      [] Mouse wheel movement support
   [] Sprites
   [] Memory arenas
   [] ECS
