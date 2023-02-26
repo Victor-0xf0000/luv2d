@@ -9,7 +9,8 @@ add_executable(luv2d src/main.cpp
   src/engine.cpp
   # graphics
   src/graphics/renderer.cpp
-  # events
+	src/graphics/texture.cpp
+	# events
   src/events/eventManager.cpp
   src/events/keyEvent.cpp
   src/events/applicationEvent.cpp

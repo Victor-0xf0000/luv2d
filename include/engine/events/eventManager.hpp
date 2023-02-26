@@ -16,6 +16,6 @@ namespace luv
 
     void update_events();
 
-    Event getEvent() const;
+    Event getEvent();
   };
 }

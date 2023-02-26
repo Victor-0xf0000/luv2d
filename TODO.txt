@@ -3,15 +3,22 @@
   [x] Renderer
   [] Event
     [x] Application events
-    [x] Key events
+    [] Key events
+			[x] Basic
+			[] Typing event
     [] Mouse events
-      [] Mouse wheel movement support
+      [x] Basic
+			[] Mouse wheel movement support
   [] Sprites
-  [] Memory arenas
+		[x] Textures
+	[] Clock
+  [] Camera
+	[] Memory arenas
   [] ECS
   [] Assets Manager
 -- Others
   [] Exporting engine to be used (dll? static library?)
   [] Some documentation
 -- Consider
-  [] Multi-thread support (only for the hard boiss)
+  [] Multi-thread engine (only for the hard boiss)
+	[] Maybe provide some UI creation

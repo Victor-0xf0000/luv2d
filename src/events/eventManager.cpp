@@ -98,7 +98,8 @@ void luv::EventManager::update_events()
   this->event.keyEvent.update_state();
 }
 
-luv::Event luv::EventManager::getEvent() const
+luv::Event luv::EventManager::getEvent()
 {
+  this->update_events();
   return this->event;
 }

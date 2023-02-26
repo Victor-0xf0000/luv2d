@@ -4,6 +4,8 @@
 #include <SDL2/SDL.h>
 // graphics
 #include <engine/graphics/renderer.hpp>
+#include <engine/graphics/texture.hpp>
+#include <engine/graphics/color.hpp>
 // events
 #include <engine/events/keyEvent.hpp>
 #include <engine/events/event.hpp>
