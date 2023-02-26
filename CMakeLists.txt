@@ -8,5 +8,10 @@ add_executable(luv2d src/main.cpp
   src/window.cpp
   src/engine.cpp
   # graphics
-  src/graphics/renderer.cpp)
+  src/graphics/renderer.cpp
+  # events
+  src/events/eventManager.cpp
+  src/events/keyEvent.cpp
+  src/events/applicationEvent.cpp
+  src/events/mouseEvent.cpp)
 target_link_libraries(luv2d PUBLIC mingw32 SDL2main SDL2 SDL2_image)

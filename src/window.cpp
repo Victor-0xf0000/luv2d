@@ -51,7 +51,7 @@ bool luv::Window::get_resizable() const
 void luv::Window::set_resizable(bool resizable)
 {
   this->resizable = resizable;
-  SDL_SetWindowResizable(this->sdl_window_ptr, SDL_TRUE);
+  SDL_SetWindowResizable(this->sdl_window_ptr, (SDL_bool)resizable);
 }
 
 void luv::Window::resize(int width, int height)

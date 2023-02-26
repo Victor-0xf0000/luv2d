@@ -1,23 +1,26 @@
 #pragma once
 
-#include <memory>
+#include <engine/base.hpp>
 
 namespace luv
 {
   struct Window;
   struct Renderer;
+  struct EventManager;
   struct Engine
   {
   private:
-    std::shared_ptr<luv::Window> window;
-    std::shared_ptr<luv::Renderer> renderer;
+    Ref<luv::Window> window;
+    Ref<luv::Renderer> renderer;
+    Ref<luv::EventManager> eventManager;
   public:
     Engine();
     ~Engine();
     
     void start();
 
-    luv::Renderer* get_renderer();
-    luv::Window* get_window();
+    luv::Renderer* getRenderer();
+    luv::Window* getWindow();
+    luv::EventManager* getEventManager();
   };
 }
