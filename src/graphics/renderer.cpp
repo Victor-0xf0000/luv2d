@@ -42,7 +42,7 @@ void luv::Renderer::set_vsync(bool vsync)
   this->vsync = vsync;
 
   // TODO: Save vsync state
-  if (!SDL_RenderSetVSync(this->sdl_renderer_ptr, vsync))
+  if (SDL_RenderSetVSync(this->sdl_renderer_ptr, vsync) != 0)
   {
     printf("Failed setting vsync! Error: %s\n", SDL_GetError());
     printf("VSYNC may be set when restarting the game.\n");

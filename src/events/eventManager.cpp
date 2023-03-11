@@ -15,6 +15,7 @@ luv::EventManager::~EventManager()
 void luv::EventManager::create()
 {
   this->event.keyEvent.create();
+  this->event.mouseEvent.create();
 }
 
 void luv::EventManager::update_events()
@@ -93,6 +94,8 @@ void luv::EventManager::update_events()
         this->event.eventType.set((int)EventType::MouseMove);
         break;
       }
+      default:
+        break;
     }
   }
   this->event.keyEvent.update_state();

@@ -7,8 +7,8 @@ void luv::MouseEvent::create()
 {
   for (int i = 0; i < 3; i++)
   {
-    this->mouseButtons[i] = -1;
-    this->prevMouseButtons[i] = -1;
+    this->mouseButtons[i] = false;
+    this->prevMouseButtons[i] = false;
   }
 }
       

@@ -16,6 +16,7 @@
 	[] Memory arenas
   [] ECS
   [] Assets Manager
+  [] Text rendering
 -- Others
   [] Exporting engine to be used (dll? static library?)
   [] Some documentation
