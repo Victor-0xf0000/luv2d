@@ -2,8 +2,10 @@
 
 #include <engine/window.hpp>
 
+#include <glad/glad.h>
+
 luv::Window::Window()
-  : sdl_window_ptr(nullptr), width(0), height(0), resizable(false)
+  : sdl_window_ptr(nullptr)
 {
   
 }
@@ -16,11 +18,22 @@ luv::Window::~Window()
 void luv::Window::create(const char* title, int width, int height)
 {
   this->sdl_window_ptr = SDL_CreateWindow(title, 
-      SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN);
+      SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 
+      width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
   if (!this->sdl_window_ptr)
   {
     printf("Error creating window! Error: %s\n", SDL_GetError());
   }
+  
+  this->sdl_context = SDL_GL_CreateContext(this->sdl_window_ptr);
+  SDL_GL_MakeCurrent(this->sdl_window_ptr, this->sdl_context);
+
+  gladLoadGLLoader(SDL_GL_GetProcAddress);
+  
+  SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 1);
+  SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
+  SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+
   this->title = title;
   this->width = width;
   this->height = height;

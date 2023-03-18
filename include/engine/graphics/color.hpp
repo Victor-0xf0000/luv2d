@@ -18,5 +18,25 @@ namespace luv
 			this->b = b;
 			this->a = a;
 		}
+
+    float norm_r()
+    {
+      return this->r / 255.f;
+    }
+
+    float norm_g()
+    {
+      return this->g / 255.f;
+    }
+
+    float norm_b()
+    {
+      return this->b / 255.f;
+    }
+
+    float norm_a()
+    {
+      return this->a / 255.f;
+    }
 	};
 };

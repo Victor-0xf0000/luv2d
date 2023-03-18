@@ -4,16 +4,19 @@
 
 int main(int argc, const char** argv)
 {
-  
   luv::Engine engine;
   engine.start();
   engine.getWindow()->change_title("LOVELY TEST");
-  engine.getWindow()->set_resizable(true);
+  engine.getWindow()->set_resizable(false);
   engine.getRenderer()->set_vsync(true);  
 
   bool should_quit = false;
   float x = 0, y = 0;
-	while (!should_quit)
+  luv::Time time = luv::Time::seconds(0.f);
+  luv::Ref<luv::Texture> texture = luv::createRef<luv::Texture>();
+  texture->loadFromFile("data/test.png");
+
+  while (!should_quit)
   { 
     engine.getClock()->tick();
   
@@ -40,19 +43,29 @@ int main(int argc, const char** argv)
 		if (ev.keyEvent.get_key(luv::KeyCode::S) == luv::KeyState::KEY_HOLD)
 			y+= 250*dt;
     if (ev.mouseEvent.get_button(luv::MouseButton::BUTTON_LEFT) == 
-        luv::MouseButtonState::MOUSE_BUTTON_PRESSED)
+        luv::MouseButtonState::MOUSE_BUTTON_HOLD)
     {
       x = ev.mouseEvent.mouse_x;
       y = ev.mouseEvent.mouse_y;
     }
     
-		
-		engine.getRenderer()->set_background_color({40, 0, 5, 255});
+		time = time + luv::Time::seconds(dt);
+    if (time.get_seconds() > 3.f)
+    {
+      printf("fps: %f\n", 1.f/dt);
+      time = luv::Time::seconds(0.f);
+    }
+		engine.getRenderer()->set_background_color({147, 157, 173, 255});
 		engine.getRenderer()->begin_render();
-
-		luv::Ref<luv::Texture> texture = luv::createRef<luv::Texture>();
-		texture = engine.getRenderer()->loadTexture("data/test.png");
-		engine.getRenderer()->render_texture(texture, x, y, 256, 256);
+    
+    std::array<luv::Color, 4> colors = {
+      luv::Color(255, 0, 0, 255), luv::Color(0, 255, 0, 255), 
+      luv::Color(0, 0, 255, 255), luv::Color(255, 255, 255, 255)};
+    engine.getRenderer()->render_quad({{0, 0}, 
+        100, 
+        100}, colors);  
+    engine.getRenderer()->render_texture(texture, x, y, 256, 256);
+    engine.getRenderer()->render_texture(texture, 300, 250, 256, 256);
 
     engine.getRenderer()->end_render();
 	}
