@@ -5,6 +5,9 @@
 #include <engine/base.hpp>
 #include <engine/graphics/color.hpp>
 
+#include <engine/core/luv_math.hpp>
+#include <array>
+
 namespace luv
 {
   struct Window;
@@ -12,8 +15,7 @@ namespace luv
   struct Renderer
   {
   private:
-    SDL_Renderer* sdl_renderer_ptr;
-    
+    luv::Ref<Window> window_ptr;
     bool vsync;
 
     Color background_color;
@@ -28,10 +30,10 @@ namespace luv
     
     void set_background_color(Color color);
 
-    Ref<Texture> loadTexture(const char* path);
-
     void begin_render();
-    void render_texture(Ref<Texture> texture, int x, int y, int width, int height);
+    void render_texture(const Ref<Texture>& texture, int x, int y, int width, int height);
+    void render_quad(luv::Rect rect, std::array<luv::Color, 4> vertexColors);
+    void render_quad(luv::Rect rect, luv::Color color);
     void end_render();
   };
 }
