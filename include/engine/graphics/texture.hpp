@@ -13,7 +13,6 @@ namespace luv
 	{
 		friend Renderer;
 	private:
-		SDL_Texture* sdl_texture_ptr;
 	  u8* pixels;
     int gl_texture_name;
   public:

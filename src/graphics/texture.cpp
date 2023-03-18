@@ -10,18 +10,13 @@
 #include <glad/glad.h>
 
 luv::Texture::Texture()
-	: sdl_texture_ptr(nullptr)
+	: pixels(nullptr)
 {
 
 }
 
 luv::Texture::~Texture()
 {
-	// If the sdl texture ptr exists
-	if (this->sdl_texture_ptr)
-	{
-		SDL_DestroyTexture(this->sdl_texture_ptr);
-	}
   free(this->pixels);
 }
 

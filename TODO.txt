@@ -9,16 +9,15 @@
     [] Mouse events
       [x] Basic
 			[] Mouse wheel movement support
-  [] Sprites
-		[x] Textures
-	[] Clock
-  [] Camera
-	[] Memory arenas
-  [] ECS
-  [] Assets Manager
+  [x] Textures
+	[x] Clock 
+  [] Camera < 1
+	[] Memory arenas < ?2
+  [] ECS 
+  [] Assets Manager < 2
   [] Text rendering
 -- Others
-  [] Exporting engine to be used (dll? static library?)
+  [] Exporting engine to be used as dll
   [] Some documentation
 -- Consider
   [] Multi-thread engine (only for the hard boiss)
