@@ -1,5 +1,5 @@
 # LUV2D
-Luv2D is a game framework written in c++, It uses SDL2 as 
+Luv2D is a game framework written in c++, It uses SDL2 for 
 window management, and OpenGL 1.1 in the render pipeline.
 
 # Why OpenGL 1.1?

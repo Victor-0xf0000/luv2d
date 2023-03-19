@@ -8,6 +8,7 @@ namespace luv
   struct Renderer;
   struct EventManager;
   struct Clock;
+  struct Camera;
   struct Engine
   {
   private:
@@ -15,6 +16,7 @@ namespace luv
     Ref<luv::Renderer> renderer;
     Ref<luv::EventManager> eventManager;
     Ref<luv::Clock> clock;
+    Ref<luv::Camera> camera;
   public:
     Engine();
     ~Engine();
@@ -25,5 +27,6 @@ namespace luv
     luv::Window* getWindow();
     luv::EventManager* getEventManager();
     luv::Clock* getClock();
+    luv::Camera* getCamera();
   };
 }

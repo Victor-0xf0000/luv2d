@@ -4,14 +4,14 @@
 #include <engine/window.hpp>
 #include <engine/events/eventManager.hpp>
 #include <engine/core/clock.hpp>
-
-#include <SDL2/SDL_Image.h>
+#include <engine/core/camera.hpp>
 
 luv::Engine::Engine()
   : window(createRef<luv::Window>()),
   renderer(createRef<luv::Renderer>()),
   eventManager(createRef<luv::EventManager>()),
-  clock(createRef<luv::Clock>())
+  clock(createRef<luv::Clock>()),
+  camera(createRef<luv::Camera>())
 {
 }
 
@@ -26,12 +26,10 @@ void luv::Engine::start()
 	{
 		fprintf(stderr, "Error while initializing sdl2: %s\n", SDL_GetError());
 	}
-	
-	if (!(IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG)) {
-    fprintf(stderr, "could not initialize sdl2_image: %s\n", IMG_GetError());
-  }
+  
   this->window->create("Luv2D", 800, 600);
-  this->renderer->create(this->window);
+  this->camera->create(this->window->get_width(), this->window->get_height());
+  this->renderer->create(this->window, this->camera);
   this->eventManager->create();
   this->clock->create();
 }
@@ -54,4 +52,10 @@ luv::EventManager* luv::Engine::getEventManager()
 luv::Clock* luv::Engine::getClock()
 {
   return this->clock.get();
+}
+
+
+luv::Camera* luv::Engine::getCamera()
+{
+  return this->camera.get();
 }

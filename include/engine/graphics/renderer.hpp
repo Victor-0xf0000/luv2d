@@ -11,11 +11,13 @@
 namespace luv
 {
   struct Window;
+  struct Camera;
   struct Texture;
   struct Renderer
   {
   private:
     luv::Ref<Window> window_ptr;
+    luv::Ref<Camera> camera_ptr;
     bool vsync;
 
     Color background_color;
@@ -23,7 +25,7 @@ namespace luv
     Renderer();
     ~Renderer();
 
-    void create(Ref<luv::Window> window);
+    void create(luv::Ref<luv::Window> window, luv::Ref<luv::Camera> camera);
     
     bool get_vsync() const;
     void set_vsync(bool vsync);

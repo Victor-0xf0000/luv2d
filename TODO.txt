@@ -12,8 +12,8 @@
   [x] Textures
 	[x] Clock 
   [] Camera < 1
-	[] Memory arenas < ?2
-  [] ECS 
+	[] Memory arenas < 2?
+  [] ECS < 3
   [] Assets Manager < 2
   [] Text rendering
 -- Others

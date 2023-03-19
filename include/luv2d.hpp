@@ -14,7 +14,9 @@
 #include <engine/core/keys.hpp>
 #include <engine/core/mouse.hpp>
 #include <engine/core/clock.hpp>
+#include <engine/core/camera.hpp>
 #include <engine/core/time.hpp>
+#include <engine/core/luv_math.hpp>
 // engine
 #include <engine/engine.hpp>
 #include <engine/window.hpp>
