@@ -1,3 +1,0 @@
-C:/Users/isaias/Documents/victor/luv2d/build/CMakeFiles/luv2d.dir
-C:/Users/isaias/Documents/victor/luv2d/build/CMakeFiles/edit_cache.dir
-C:/Users/isaias/Documents/victor/luv2d/build/CMakeFiles/rebuild_cache.dir
