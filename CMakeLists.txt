@@ -13,6 +13,7 @@ add_executable(luv2d src/main.cpp
   # graphics
   src/graphics/renderer.cpp
 	src/graphics/texture.cpp
+  src/graphics/renderable.cpp
 	# events
   src/events/eventManager.cpp
   src/events/keyEvent.cpp
@@ -26,11 +27,11 @@ target_compile_options(luv2d PUBLIC -Wall -O2)
 # SDL2 LIBRARY
 
 if (NOT EXISTS ${CMAKE_BINARY_DIR}/lib)
-  file(COPY ${CMAKE_SOURCE_DIR}/lib/SDL2.lib DESTINATION ${CMAKE_BINARY_DIR}/lib)
-  file(COPY ${CMAKE_SOURCE_DIR}/lib/SDL2main.lib DESTINATION ${CMAKE_BINARY_DIR}/lib)
+  file(COPY ${CMAKE_SOURCE_DIR}/dependencies/SDL2.lib DESTINATION ${CMAKE_BINARY_DIR}/lib)
+  file(COPY ${CMAKE_SOURCE_DIR}/dependencies/SDL2main.lib DESTINATION ${CMAKE_BINARY_DIR}/lib)
 endif ()
 if (NOT EXISTS ${CMAKE_BINARY_DIR}/SDL2.dll)
-  file(COPY ${CMAKE_SOURCE_DIR}/lib/SDL2.dll DESTINATION ${CMAKE_BINARY_DIR}/)
+  file(COPY ${CMAKE_SOURCE_DIR}/dependencies/SDL2.dll DESTINATION ${CMAKE_BINARY_DIR}/)
 endif ()
 
 add_library(luvSDL2 STATIC IMPORTED)

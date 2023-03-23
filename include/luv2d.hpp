@@ -6,6 +6,7 @@
 #include <engine/graphics/renderer.hpp>
 #include <engine/graphics/texture.hpp>
 #include <engine/graphics/color.hpp>
+#include <engine/graphics/renderable.hpp>
 // events
 #include <engine/events/keyEvent.hpp>
 #include <engine/events/event.hpp>

@@ -151,7 +151,13 @@ CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj: \
  C:/Users/isaias/Documents/victor/luv2d/thirdparty/KHR/khrplatform.h \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/renderer.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/color.hpp \
+ C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/renderCmd.hpp \
+ C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/geometry.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/core/luv_math.hpp \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\vector \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_bvector.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\vector.tcc \
  C:/Users/isaias/Documents/victor/luv2d/thirdparty/SDL2/SDL_Image.h \
  C:/Users/isaias/Documents/victor/luv2d/thirdparty/SDL2/SDL.h \
  C:/Users/isaias/Documents/victor/luv2d/thirdparty/stb_image/stb_image.h \

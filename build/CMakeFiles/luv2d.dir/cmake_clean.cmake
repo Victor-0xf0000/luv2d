@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.obj.d"
   "CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj"
   "CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj.d"
+  "CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj"
+  "CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj.d"
   "CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj"
   "CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj.d"
   "CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj"

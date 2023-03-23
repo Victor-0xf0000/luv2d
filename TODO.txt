@@ -10,7 +10,8 @@
       [x] Basic
 			[] Mouse wheel movement support
   [x] Textures
-	[x] Clock 
+  [] Sprite batch (drawing multiple sprites given a single texture)
+  [x] Clock 
   [] Camera < 1
 	[] Memory arenas < 2?
   [] ECS < 3

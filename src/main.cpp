@@ -2,19 +2,34 @@
 #include <stdio.h>
 #include <iostream>
 
-int main(int argc, const char** argv)
+int main(int argc, char** argv)
 {
   luv::Engine engine;
   engine.start();
-  engine.getWindow()->change_title("Luvely test");
+  engine.getWindow()->change_title("luvely test");
   engine.getWindow()->set_resizable(false);
   engine.getRenderer()->set_vsync(true);  
 
   bool should_quit = false;
   float x = 0, y = 0;
   luv::Time time = luv::Time::seconds(0.f);
+ 
   luv::Ref<luv::Texture> texture = luv::createRef<luv::Texture>();
   texture->loadFromFile("data/test.png");
+  luv::Ref<luv::Texture> texture2 = luv::createRef<luv::Texture>();
+  texture2->loadFromFile("data/test2.png");
+  
+  luv::Ref<luv::Renderable> renderable = luv::createRef<luv::Renderable>();
+  renderable->set_texture(texture);
+  renderable->set_size({64.f, 64.f});
+  renderable->set_pos({0.f, 0.f});
+  renderable->set_scale({2.f, 2.f});
+  luv::Ref<luv::Renderable> renderable2 = luv::createRef<luv::Renderable>();
+  renderable2->set_texture(texture2);
+  renderable2->set_size({128.f, 128.f});
+  renderable2->set_pos({0.f, 0.f});
+  renderable2->set_scale({2.f, 2.f});
+
   while (!should_quit)
   { 
     engine.getClock()->tick();
@@ -54,6 +69,7 @@ int main(int argc, const char** argv)
       luv::Rect mpos_to_world = engine.getCamera()->convert_rect_to_world({{x, y}, 1, 1});
       x = mpos_to_world.pos.x;
       y = mpos_to_world.pos.y;
+      renderable->set_pos({x, y});
     }
     
 		time = time + luv::Time::seconds(dt);
@@ -62,20 +78,27 @@ int main(int argc, const char** argv)
       printf("fps: %f\n", 1.f/dt);
       time = luv::Time::seconds(0.f);
     }
-		engine.getRenderer()->set_background_color({147, 157, 173, 255});
+		engine.getRenderer()->set_background_color({40, 40, 40, 255});
 		engine.getRenderer()->begin_render();
     
     // Slow
-    //engine.getRenderer()->render_quad(camera.convert_rect_to_screen({{0,0}, 
-    //    engine.getWindow()->get_width(), engine.getWindow()->get_height()}),
+    //engine.getRenderer()->render_quad({{0,0}, 
+    //    engine.getWindow()->get_width(), engine.getWindow()->get_height()},
     //    {30, 30, 30, 255});
-    for (int i = 0; i < 60; i++)
-    {
-      engine.getRenderer()->render_texture(texture, 
-          i*20, 0, 128, 128);
-      engine.getRenderer()->render_texture(texture, 
-          i*40, 0, 128, 128);
-    }
+    //engine.getRenderer()->render_texture(texture, 
+    //    x, y, 128, 128);
+    //for (int i = 0; i < 60; i++)
+    //{
+    //  engine.getRenderer()->render_texture(texture, 
+    //     i*20, 0, 128, 128);
+    //  engine.getRenderer()->render_texture(texture, 
+    //     i*40, 0, 128, 128);
+    //}
+    //renderable2->set_pos({0, 0});
+    //engine.getRenderer()->render_sprite(renderable2);
+    //engine.getRenderer()->render_sprite(renderable);
+    engine.getRenderer()->render_quad({{0, 0}, 900, 600}, {255, 30, 30, 130});
+
     engine.getRenderer()->end_render();
 	}
 

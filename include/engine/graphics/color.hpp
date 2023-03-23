@@ -2,6 +2,7 @@
 
 namespace luv
 {
+  static float inv255f = 1.f / 255.f;
 	struct Color
 	{
 		int r;
@@ -21,22 +22,22 @@ namespace luv
 
     float norm_r()
     {
-      return this->r / 255.f;
+      return this->r * inv255f;
     }
 
     float norm_g()
     {
-      return this->g / 255.f;
+      return this->g * inv255f;
     }
 
     float norm_b()
     {
-      return this->b / 255.f;
+      return this->b * inv255f;
     }
 
     float norm_a()
     {
-      return this->a / 255.f;
+      return this->a * inv255f;
     }
 	};
 };

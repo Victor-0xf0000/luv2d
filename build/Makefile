@@ -296,6 +296,30 @@ src/events/mouseEvent.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.s
 .PHONY : src/events/mouseEvent.cpp.s
 
+src/graphics/renderable.obj: src/graphics/renderable.cpp.obj
+.PHONY : src/graphics/renderable.obj
+
+# target to build an object file
+src/graphics/renderable.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj
+.PHONY : src/graphics/renderable.cpp.obj
+
+src/graphics/renderable.i: src/graphics/renderable.cpp.i
+.PHONY : src/graphics/renderable.i
+
+# target to preprocess a source file
+src/graphics/renderable.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.i
+.PHONY : src/graphics/renderable.cpp.i
+
+src/graphics/renderable.s: src/graphics/renderable.cpp.s
+.PHONY : src/graphics/renderable.s
+
+# target to generate assembly for a file
+src/graphics/renderable.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.s
+.PHONY : src/graphics/renderable.cpp.s
+
 src/graphics/renderer.obj: src/graphics/renderer.cpp.obj
 .PHONY : src/graphics/renderer.obj
 
@@ -470,6 +494,9 @@ help:
 	@echo ... src/events/mouseEvent.obj
 	@echo ... src/events/mouseEvent.i
 	@echo ... src/events/mouseEvent.s
+	@echo ... src/graphics/renderable.obj
+	@echo ... src/graphics/renderable.i
+	@echo ... src/graphics/renderable.s
 	@echo ... src/graphics/renderer.obj
 	@echo ... src/graphics/renderer.i
 	@echo ... src/graphics/renderer.s

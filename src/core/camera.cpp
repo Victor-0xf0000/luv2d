@@ -12,9 +12,9 @@ luv::Camera::~Camera()
 
 void luv::Camera::create(int window_width, int window_height)
 {
-  float ratio = (float) window_width / (float) window_height;
-  
   this->zoom = 1.f;
+  this->min_zoom = 1.f;
+  this->max_zoom = 1.f;
   this->ww = window_width;
   this->wh = window_height;
   this->vw = window_width;

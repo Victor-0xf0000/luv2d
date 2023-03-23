@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/isaias/Documents/victor/luv2d/src/events/eventManager.cpp" "CMakeFiles/luv2d.dir/src/events/eventManager.cpp.obj" "gcc" "CMakeFiles/luv2d.dir/src/events/eventManager.cpp.obj.d"
   "C:/Users/isaias/Documents/victor/luv2d/src/events/keyEvent.cpp" "CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.obj" "gcc" "CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.obj.d"
   "C:/Users/isaias/Documents/victor/luv2d/src/events/mouseEvent.cpp" "CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj" "gcc" "CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj.d"
+  "C:/Users/isaias/Documents/victor/luv2d/src/graphics/renderable.cpp" "CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj" "gcc" "CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj.d"
   "C:/Users/isaias/Documents/victor/luv2d/src/graphics/renderer.cpp" "CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj" "gcc" "CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj.d"
   "C:/Users/isaias/Documents/victor/luv2d/src/graphics/texture.cpp" "CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj" "gcc" "CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj.d"
   "C:/Users/isaias/Documents/victor/luv2d/src/main.cpp" "CMakeFiles/luv2d.dir/src/main.cpp.obj" "gcc" "CMakeFiles/luv2d.dir/src/main.cpp.obj.d"

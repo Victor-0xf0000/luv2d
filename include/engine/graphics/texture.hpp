@@ -20,7 +20,7 @@ namespace luv
 		~Texture();
 	  
     const u8* get_pixels() const;
-    int get_texture_name() const;
+    int get_texture_name();
 
     bool loadFromFile(const char* path);
   };
