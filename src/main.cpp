@@ -1,6 +1,7 @@
 #include <luv2d.hpp>
 #include <stdio.h>
 #include <iostream>
+#include <string>
 
 int main(int argc, char** argv)
 {
@@ -9,33 +10,27 @@ int main(int argc, char** argv)
   engine.getWindow()->change_title("luvely test");
   engine.getWindow()->set_resizable(false);
   engine.getRenderer()->set_vsync(true);  
-
+  engine.getCamera()->set_min_zoom(0.7f);
   bool should_quit = false;
   float x = 0, y = 0;
   luv::Time time = luv::Time::seconds(0.f);
- 
-  luv::Ref<luv::Texture> texture = luv::createRef<luv::Texture>();
-  texture->loadFromFile("data/test.png");
-  luv::Ref<luv::Texture> texture2 = luv::createRef<luv::Texture>();
-  texture2->loadFromFile("data/test2.png");
+  
+  engine.getAssetsManager()->loadTextures({
+      {"test", "data/test.png"},
+      {"test2", "data/test2.png"}
+  });
   
   luv::Ref<luv::Renderable> renderable = luv::createRef<luv::Renderable>();
-  renderable->set_texture(texture);
+  renderable->set_texture(engine.getAssetsManager()->getTexture("test2"));
   renderable->set_size({64.f, 64.f});
   renderable->set_pos({0.f, 0.f});
   renderable->set_scale({2.f, 2.f});
-  luv::Ref<luv::Renderable> renderable2 = luv::createRef<luv::Renderable>();
-  renderable2->set_texture(texture2);
-  renderable2->set_size({128.f, 128.f});
-  renderable2->set_pos({0.f, 0.f});
-  renderable2->set_scale({2.f, 2.f});
-
+  
   while (!should_quit)
   { 
     engine.getClock()->tick();
   
     luv::Event ev = engine.getEventManager()->getEvent();
-    
     double dt = engine.getClock()->getDeltaTime().get_seconds();
 
     if (ev.containsType(luv::EventType::WindowResize))
@@ -60,6 +55,8 @@ int main(int argc, char** argv)
       engine.getCamera()->change_zoom(-5.f*static_cast<float>(dt));
     if (ev.keyEvent.get_key(luv::KeyCode::P) == luv::KeyState::KEY_HOLD)
       engine.getCamera()->change_zoom(5.f*static_cast<float>(dt));
+    if (ev.keyEvent.get_key(luv::KeyCode::R) == luv::KeyState::KEY_PRESSED)
+      engine.getCamera()->change_zoom(1.f);
 
     if (ev.mouseEvent.get_button(luv::MouseButton::BUTTON_LEFT) == 
         luv::MouseButtonState::MOUSE_BUTTON_HOLD)
@@ -71,6 +68,10 @@ int main(int argc, char** argv)
       y = mpos_to_world.pos.y;
       renderable->set_pos({x, y});
     }
+    if (ev.keyEvent.get_key(luv::KeyCode::NUMBER_1) == luv::KeyState::KEY_PRESSED)
+      renderable->set_texture(engine.getAssetsManager()->getTexture("test"));
+    if (ev.keyEvent.get_key(luv::KeyCode::NUMBER_2) == luv::KeyState::KEY_PRESSED)
+      renderable->set_texture(engine.getAssetsManager()->getTexture("test2"));
     
 		time = time + luv::Time::seconds(dt);
     if (time.get_seconds() > 3.f)
@@ -81,24 +82,10 @@ int main(int argc, char** argv)
 		engine.getRenderer()->set_background_color({40, 40, 40, 255});
 		engine.getRenderer()->begin_render();
     
-    // Slow
-    //engine.getRenderer()->render_quad({{0,0}, 
-    //    engine.getWindow()->get_width(), engine.getWindow()->get_height()},
-    //    {30, 30, 30, 255});
-    //engine.getRenderer()->render_texture(texture, 
-    //    x, y, 128, 128);
-    //for (int i = 0; i < 60; i++)
-    //{
-    //  engine.getRenderer()->render_texture(texture, 
-    //     i*20, 0, 128, 128);
-    //  engine.getRenderer()->render_texture(texture, 
-    //     i*40, 0, 128, 128);
-    //}
-    //renderable2->set_pos({0, 0});
-    //engine.getRenderer()->render_sprite(renderable2);
-    //engine.getRenderer()->render_sprite(renderable);
-    engine.getRenderer()->render_quad({{0, 0}, 900, 600}, {255, 30, 30, 130});
-
+    engine.getRenderer()->render_quad({{0, 0}, 
+        engine.getWindow()->get_width(), engine.getWindow()->get_height()},
+        {50, 50, 50, 255});
+    engine.getRenderer()->render_sprite(renderable);
     engine.getRenderer()->end_render();
 	}
 

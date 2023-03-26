@@ -9,7 +9,6 @@ namespace luv
   {
   private:
     SDL_Window* sdl_window_ptr;
-    SDL_GLContext sdl_context;
 
     std::string title;
     bool resizable;

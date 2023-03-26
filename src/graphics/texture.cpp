@@ -1,60 +1,73 @@
 #include <engine/graphics/texture.hpp>
 #include <engine/graphics/renderer.hpp>
 
-#include <SDL2/SDL_Image.h>
+#include <SDL2/SDL.h>
 
 #include <stb_image/stb_image.h>
 
 #include <stdio.h>
 
-#include <glad/glad.h>
+#include <algorithm>
+#include <array>
 
 luv::Texture::Texture()
-	: pixels(nullptr)
+	: sdl_texture_ptr(nullptr)
 {
 
 }
 
 luv::Texture::~Texture()
 {
-  free(this->pixels);
+  SDL_DestroyTexture(this->sdl_texture_ptr);
 }
 
-bool luv::Texture::loadFromFile(const char* path)
+bool luv::Texture::loadFromFile(SDL_Renderer* sdl_renderer_ptr, 
+    const char* path)
 {
+  // TODO: refactor this late, this stinks
   int w, h, componentsPerPixel;
-  this->pixels = stbi_load(path, &w, &h, &componentsPerPixel, 4);
+  u8* pixels = stbi_load(path, &w, &h, &componentsPerPixel, 0);
 
-  if (!this->pixels)
+  if (!pixels)
   {
     fprintf(stderr, "Error reading %s\n", path);
     return false;
   }
+  SDL_Surface* surface;
   
-  glDisable(GL_DEPTH_TEST);
-  glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
+  std::array<u32, 4> masks;
+  if (testByteOrder() == LITTLE_ENDIAN)
+    masks = {0x000000FF, 0x0000FF00, 0x00FF0000, 0xFF000000};
+  else
+    masks = {0xFF000000, 0x00FF0000, 0x0000FF00, 0x000000FF};
+
+  if (componentsPerPixel == 4)
+    surface = SDL_CreateRGBSurfaceFrom(pixels, w, h, 32, w*4, masks[0], masks[1], masks[2], masks[3]);
+  else if (componentsPerPixel == 3)
+    surface = SDL_CreateRGBSurfaceFrom(pixels, w, h, 24, w*3, masks[0], masks[1], masks[2], masks[3]);
+  else
+  {
+    printf("Error: unsupported number of components: %i\n", componentsPerPixel);
+    free(pixels);
+    return false;
+  }
+
+  free(pixels);
   
-  GLuint name;
-  glGenTextures(1, &name);
-  this->gl_texture_name = name;
-  glBindTexture(GL_TEXTURE_2D, name);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, 
-      GL_RGBA, GL_UNSIGNED_BYTE, this->pixels);
-  
+  if (surface)
+  {
+    this->sdl_texture_ptr = SDL_CreateTextureFromSurface(
+        sdl_renderer_ptr,
+        surface);
+  }
+  else
+  {
+    fprintf(stderr, "Couldn't create sdl surface, error: %s\n", SDL_GetError());
+    return false;
+  }
+
+  SDL_FreeSurface(surface);
+
   return true;
 }
 
-
-const u8* luv::Texture::get_pixels() const
-{
-  return this->pixels;
-}
-
-int luv::Texture::get_texture_name()
-{
-  return this->gl_texture_name;
-}

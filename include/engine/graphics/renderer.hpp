@@ -22,6 +22,9 @@ namespace luv
   private:
     luv::Ref<Window> window_ptr;
     luv::Ref<Camera> camera_ptr;
+
+    SDL_Renderer* sdl_renderer_ptr;
+
     bool vsync;
 
     Color background_color;
@@ -42,6 +45,8 @@ namespace luv
     void set_vsync(bool vsync);
     
     void set_background_color(Color color);
+    
+    luv::Ref<luv::Texture> load_texture(const char* path);
 
     void begin_render();
     void render_texture(const Ref<Texture>& texture, int x, int y, int width, int height);

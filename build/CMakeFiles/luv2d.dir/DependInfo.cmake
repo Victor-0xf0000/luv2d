@@ -8,8 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/isaias/Documents/victor/luv2d/thirdparty/glad/glad.c" "CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj" "gcc" "CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj.d"
   "C:/Users/isaias/Documents/victor/luv2d/thirdparty/stb_image/stb_image_implementation.c" "CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj" "gcc" "CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj.d"
+  "C:/Users/isaias/Documents/victor/luv2d/src/assets/assetsManager.cpp" "CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj" "gcc" "CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj.d"
+  "C:/Users/isaias/Documents/victor/luv2d/src/core/arena.cpp" "CMakeFiles/luv2d.dir/src/core/arena.cpp.obj" "gcc" "CMakeFiles/luv2d.dir/src/core/arena.cpp.obj.d"
   "C:/Users/isaias/Documents/victor/luv2d/src/core/camera.cpp" "CMakeFiles/luv2d.dir/src/core/camera.cpp.obj" "gcc" "CMakeFiles/luv2d.dir/src/core/camera.cpp.obj.d"
   "C:/Users/isaias/Documents/victor/luv2d/src/core/clock.cpp" "CMakeFiles/luv2d.dir/src/core/clock.cpp.obj" "gcc" "CMakeFiles/luv2d.dir/src/core/clock.cpp.obj.d"
   "C:/Users/isaias/Documents/victor/luv2d/src/engine.cpp" "CMakeFiles/luv2d.dir/src/engine.cpp.obj" "gcc" "CMakeFiles/luv2d.dir/src/engine.cpp.obj.d"

@@ -150,15 +150,13 @@ CMakeFiles/luv2d.dir/src/main.cpp.obj: \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\backward\auto_ptr.h \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/color.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/renderCmd.hpp \
- C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/geometry.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/core/luv_math.hpp \
+ C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/geometry.hpp \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\vector \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_bvector.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\vector.tcc \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/texture.hpp \
- C:/Users/isaias/Documents/victor/luv2d/thirdparty/glad/glad.h \
- C:/Users/isaias/Documents/victor/luv2d/thirdparty/KHR/khrplatform.h \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/renderable.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/events/keyEvent.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/Core/keys.hpp \
@@ -171,8 +169,18 @@ CMakeFiles/luv2d.dir/src/main.cpp.obj: \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/core/clock.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/core/time.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/core/camera.hpp \
+ C:/Users/isaias/Documents/victor/luv2d/include/engine/core/handleList.hpp \
+ C:/Users/isaias/Documents/victor/luv2d/include/engine/core/arena.hpp \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\stdlib.h \
+ c:\mingw\include\string.h c:\mingw\include\strings.h \
+ c:\mingw\include\wchar.h \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/engine.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/window.hpp \
+ C:/Users/isaias/Documents/victor/luv2d/include/engine/assets/assetsManager.hpp \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\unordered_map \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\hashtable.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\hashtable_policy.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\unordered_map.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iostream \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios \

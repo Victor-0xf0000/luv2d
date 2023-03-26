@@ -151,8 +151,8 @@ CMakeFiles/luv2d.dir/src/engine.cpp.obj: \
  C:/Users/isaias/Documents/victor/luv2d/thirdparty/SDL2/SDL_version.h \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/color.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/renderCmd.hpp \
- C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/geometry.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/core/luv_math.hpp \
+ C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/geometry.hpp \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\vector \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_bvector.h \
@@ -168,4 +168,13 @@ CMakeFiles/luv2d.dir/src/engine.cpp.obj: \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bitset \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/core/clock.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/core/time.hpp \
- C:/Users/isaias/Documents/victor/luv2d/include/engine/core/camera.hpp
+ C:/Users/isaias/Documents/victor/luv2d/include/engine/core/camera.hpp \
+ C:/Users/isaias/Documents/victor/luv2d/include/engine/assets/assetsManager.hpp \
+ C:/Users/isaias/Documents/victor/luv2d/include/engine/core/handlelist.hpp \
+ C:/Users/isaias/Documents/victor/luv2d/include/engine/core/arena.hpp \
+ c:\mingw\include\string.h c:\mingw\include\strings.h \
+ c:\mingw\include\wchar.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\unordered_map \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\hashtable.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\hashtable_policy.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\unordered_map.h

@@ -9,6 +9,7 @@ namespace luv
   struct EventManager;
   struct Clock;
   struct Camera;
+  struct AssetsManager;
   struct Engine
   {
   private:
@@ -17,6 +18,7 @@ namespace luv
     Ref<luv::EventManager> eventManager;
     Ref<luv::Clock> clock;
     Ref<luv::Camera> camera;
+    Ref<luv::AssetsManager> assetsManager;
   public:
     Engine();
     ~Engine();
@@ -28,5 +30,6 @@ namespace luv
     luv::EventManager* getEventManager();
     luv::Clock* getClock();
     luv::Camera* getCamera();
+    luv::AssetsManager* getAssetsManager();
   };
 }

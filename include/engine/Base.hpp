@@ -4,6 +4,8 @@
 #include <cstdint>
 
 #define BIT(x) (1 << x)
+#define BIG_ENDIAN 0
+#define LITTLE_ENDIAN 1
 
 using i8 = int8_t;
 using i16 = int16_t;
@@ -30,5 +32,12 @@ namespace luv
   constexpr Ref<T> createRef(Args&&... args)
   {
     return std::make_shared<T>(std::forward<Args>(args)...);
+  }
+
+  constexpr int testByteOrder()
+  {
+    i16 word = 0x0001;
+    i8* byte = (i8*) &word;
+    return (byte[0] ? LITTLE_ENDIAN : BIG_ENDIAN);
   }
 }

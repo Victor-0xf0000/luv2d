@@ -128,6 +128,54 @@ luv2d/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/build
 .PHONY : luv2d/fast
 
+src/assets/assetsManager.obj: src/assets/assetsManager.cpp.obj
+.PHONY : src/assets/assetsManager.obj
+
+# target to build an object file
+src/assets/assetsManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj
+.PHONY : src/assets/assetsManager.cpp.obj
+
+src/assets/assetsManager.i: src/assets/assetsManager.cpp.i
+.PHONY : src/assets/assetsManager.i
+
+# target to preprocess a source file
+src/assets/assetsManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.i
+.PHONY : src/assets/assetsManager.cpp.i
+
+src/assets/assetsManager.s: src/assets/assetsManager.cpp.s
+.PHONY : src/assets/assetsManager.s
+
+# target to generate assembly for a file
+src/assets/assetsManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.s
+.PHONY : src/assets/assetsManager.cpp.s
+
+src/core/arena.obj: src/core/arena.cpp.obj
+.PHONY : src/core/arena.obj
+
+# target to build an object file
+src/core/arena.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/src/core/arena.cpp.obj
+.PHONY : src/core/arena.cpp.obj
+
+src/core/arena.i: src/core/arena.cpp.i
+.PHONY : src/core/arena.i
+
+# target to preprocess a source file
+src/core/arena.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/src/core/arena.cpp.i
+.PHONY : src/core/arena.cpp.i
+
+src/core/arena.s: src/core/arena.cpp.s
+.PHONY : src/core/arena.s
+
+# target to generate assembly for a file
+src/core/arena.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/src/core/arena.cpp.s
+.PHONY : src/core/arena.cpp.s
+
 src/core/camera.obj: src/core/camera.cpp.obj
 .PHONY : src/core/camera.obj
 
@@ -416,30 +464,6 @@ src/window.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/src/window.cpp.s
 .PHONY : src/window.cpp.s
 
-thirdparty/glad/glad.obj: thirdparty/glad/glad.c.obj
-.PHONY : thirdparty/glad/glad.obj
-
-# target to build an object file
-thirdparty/glad/glad.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj
-.PHONY : thirdparty/glad/glad.c.obj
-
-thirdparty/glad/glad.i: thirdparty/glad/glad.c.i
-.PHONY : thirdparty/glad/glad.i
-
-# target to preprocess a source file
-thirdparty/glad/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.i
-.PHONY : thirdparty/glad/glad.c.i
-
-thirdparty/glad/glad.s: thirdparty/glad/glad.c.s
-.PHONY : thirdparty/glad/glad.s
-
-# target to generate assembly for a file
-thirdparty/glad/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.s
-.PHONY : thirdparty/glad/glad.c.s
-
 thirdparty/stb_image/stb_image_implementation.obj: thirdparty/stb_image/stb_image_implementation.c.obj
 .PHONY : thirdparty/stb_image/stb_image_implementation.obj
 
@@ -473,6 +497,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... luv2d
+	@echo ... src/assets/assetsManager.obj
+	@echo ... src/assets/assetsManager.i
+	@echo ... src/assets/assetsManager.s
+	@echo ... src/core/arena.obj
+	@echo ... src/core/arena.i
+	@echo ... src/core/arena.s
 	@echo ... src/core/camera.obj
 	@echo ... src/core/camera.i
 	@echo ... src/core/camera.s
@@ -509,9 +539,6 @@ help:
 	@echo ... src/window.obj
 	@echo ... src/window.i
 	@echo ... src/window.s
-	@echo ... thirdparty/glad/glad.obj
-	@echo ... thirdparty/glad/glad.i
-	@echo ... thirdparty/glad/glad.s
 	@echo ... thirdparty/stb_image/stb_image_implementation.obj
 	@echo ... thirdparty/stb_image/stb_image_implementation.i
 	@echo ... thirdparty/stb_image/stb_image_implementation.s

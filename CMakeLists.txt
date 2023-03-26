@@ -10,6 +10,7 @@ add_executable(luv2d src/main.cpp
   src/engine.cpp
   src/core/clock.cpp
   src/core/camera.cpp
+  src/core/arena.cpp
   # graphics
   src/graphics/renderer.cpp
 	src/graphics/texture.cpp
@@ -19,9 +20,11 @@ add_executable(luv2d src/main.cpp
   src/events/keyEvent.cpp
   src/events/applicationEvent.cpp
   src/events/mouseEvent.cpp
+  # assets
+  src/assets/assetsManager.cpp
   # thirdparty
-  thirdparty/glad/glad.c
-  thirdparty/stb_image/stb_image_implementation.c)
+  thirdparty/stb_image/stb_image_implementation.c
+  )
 target_compile_options(luv2d PUBLIC -Wall -O2)
 
 # SDL2 LIBRARY
@@ -48,7 +51,7 @@ set_target_properties(luvSDL2main PROPERTIES
 
 # linking
 
-target_link_libraries(luv2d PUBLIC mingw32 opengl32 luvSDL2 luvSDL2main)
+target_link_libraries(luv2d PUBLIC mingw32 luvSDL2 luvSDL2main)
 
 # Only ran in everytime cmake is modified or first time build, if bin/data doesn't exists, copy it form CMAKE_SOURCE_DIR/data
 # if bin/data is deleted after building, it will not be replaced until you run cmake again

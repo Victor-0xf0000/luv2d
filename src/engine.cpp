@@ -5,13 +5,15 @@
 #include <engine/events/eventManager.hpp>
 #include <engine/core/clock.hpp>
 #include <engine/core/camera.hpp>
+#include <engine/assets/assetsManager.hpp>
 
 luv::Engine::Engine()
   : window(createRef<luv::Window>()),
   renderer(createRef<luv::Renderer>()),
   eventManager(createRef<luv::EventManager>()),
   clock(createRef<luv::Clock>()),
-  camera(createRef<luv::Camera>())
+  camera(createRef<luv::Camera>()),
+  assetsManager(createRef<luv::AssetsManager>())
 {
 }
 
@@ -32,6 +34,7 @@ void luv::Engine::start()
   this->renderer->create(this->window, this->camera);
   this->eventManager->create();
   this->clock->create();
+  this->assetsManager->create(this->renderer);
 }
 
 luv::Window* luv::Engine::getWindow()
@@ -54,8 +57,12 @@ luv::Clock* luv::Engine::getClock()
   return this->clock.get();
 }
 
-
 luv::Camera* luv::Engine::getCamera()
 {
   return this->camera.get();
+}
+
+luv::AssetsManager* luv::Engine::getAssetsManager()
+{
+  return this->assetsManager.get();
 }

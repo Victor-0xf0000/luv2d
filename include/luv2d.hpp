@@ -18,6 +18,9 @@
 #include <engine/core/camera.hpp>
 #include <engine/core/time.hpp>
 #include <engine/core/luv_math.hpp>
+#include <engine/core/handleList.hpp>
 // engine
 #include <engine/engine.hpp>
 #include <engine/window.hpp>
+// assets
+#include <engine/assets/assetsManager.hpp>

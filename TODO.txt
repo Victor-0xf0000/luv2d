@@ -12,10 +12,10 @@
   [x] Textures
   [] Sprite batch (drawing multiple sprites given a single texture)
   [x] Clock 
-  [] Camera < 1
-	[] Memory arenas < 2?
+  [x] Camera
+	[x] Memory arenas
   [] ECS < 3
-  [] Assets Manager < 2
+  [x] Assets Manager
   [] Text rendering
 -- Others
   [] Exporting engine to be used as dll

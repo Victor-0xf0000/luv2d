@@ -4,8 +4,6 @@
 
 #include <engine/base.hpp>
 
-#include <glad/glad.h>
-
 namespace luv
 {
 	struct Renderer;
@@ -13,15 +11,11 @@ namespace luv
 	{
 		friend Renderer;
 	private:
-	  u8* pixels;
-    int gl_texture_name;
+    SDL_Texture* sdl_texture_ptr;  
+    
+    bool loadFromFile(SDL_Renderer* sdl_renderer_ptr, const char* path);
   public:
 		Texture();
 		~Texture();
-	  
-    const u8* get_pixels() const;
-    int get_texture_name();
-
-    bool loadFromFile(const char* path);
   };
 }

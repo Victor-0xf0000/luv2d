@@ -80,12 +80,12 @@ clean: CMakeFiles/luv2d.dir/clean
 CMakeFiles/luv2d.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\luv2d.dir\build.make CMakeFiles/luv2d.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 "Built target luv2d"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target luv2d"
 .PHONY : CMakeFiles/luv2d.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/luv2d.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/luv2d.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles 0
 .PHONY : CMakeFiles/luv2d.dir/rule

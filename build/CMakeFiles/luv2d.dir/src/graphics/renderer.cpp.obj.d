@@ -149,15 +149,13 @@ CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj: \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\backward\auto_ptr.h \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/color.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/renderCmd.hpp \
- C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/geometry.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/core/luv_math.hpp \
+ C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/geometry.hpp \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\vector \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_bvector.h \
  c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\vector.tcc \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/texture.hpp \
- C:/Users/isaias/Documents/victor/luv2d/thirdparty/glad/glad.h \
- C:/Users/isaias/Documents/victor/luv2d/thirdparty/KHR/khrplatform.h \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/graphics/renderable.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/core/camera.hpp \
  C:/Users/isaias/Documents/victor/luv2d/include/engine/window.hpp \

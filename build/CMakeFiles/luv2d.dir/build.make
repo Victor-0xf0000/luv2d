@@ -143,11 +143,26 @@ CMakeFiles/luv2d.dir/src/core/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/luv2d.dir/src/core/camera.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\isaias\Documents\victor\luv2d\src\core\camera.cpp -o CMakeFiles\luv2d.dir\src\core\camera.cpp.s
 
+CMakeFiles/luv2d.dir/src/core/arena.cpp.obj: CMakeFiles/luv2d.dir/flags.make
+CMakeFiles/luv2d.dir/src/core/arena.cpp.obj: CMakeFiles/luv2d.dir/includes_CXX.rsp
+CMakeFiles/luv2d.dir/src/core/arena.cpp.obj: C:/Users/isaias/Documents/victor/luv2d/src/core/arena.cpp
+CMakeFiles/luv2d.dir/src/core/arena.cpp.obj: CMakeFiles/luv2d.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/luv2d.dir/src/core/arena.cpp.obj"
+	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/luv2d.dir/src/core/arena.cpp.obj -MF CMakeFiles\luv2d.dir\src\core\arena.cpp.obj.d -o CMakeFiles\luv2d.dir\src\core\arena.cpp.obj -c C:\Users\isaias\Documents\victor\luv2d\src\core\arena.cpp
+
+CMakeFiles/luv2d.dir/src/core/arena.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/luv2d.dir/src/core/arena.cpp.i"
+	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\isaias\Documents\victor\luv2d\src\core\arena.cpp > CMakeFiles\luv2d.dir\src\core\arena.cpp.i
+
+CMakeFiles/luv2d.dir/src/core/arena.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/luv2d.dir/src/core/arena.cpp.s"
+	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\isaias\Documents\victor\luv2d\src\core\arena.cpp -o CMakeFiles\luv2d.dir\src\core\arena.cpp.s
+
 CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj: CMakeFiles/luv2d.dir/flags.make
 CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj: CMakeFiles/luv2d.dir/includes_CXX.rsp
 CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj: C:/Users/isaias/Documents/victor/luv2d/src/graphics/renderer.cpp
 CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj: CMakeFiles/luv2d.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj -MF CMakeFiles\luv2d.dir\src\graphics\renderer.cpp.obj.d -o CMakeFiles\luv2d.dir\src\graphics\renderer.cpp.obj -c C:\Users\isaias\Documents\victor\luv2d\src\graphics\renderer.cpp
 
 CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.i: cmake_force
@@ -162,7 +177,7 @@ CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj: CMakeFiles/luv2d.dir/flags.ma
 CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj: CMakeFiles/luv2d.dir/includes_CXX.rsp
 CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj: C:/Users/isaias/Documents/victor/luv2d/src/graphics/texture.cpp
 CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj: CMakeFiles/luv2d.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj -MF CMakeFiles\luv2d.dir\src\graphics\texture.cpp.obj.d -o CMakeFiles\luv2d.dir\src\graphics\texture.cpp.obj -c C:\Users\isaias\Documents\victor\luv2d\src\graphics\texture.cpp
 
 CMakeFiles/luv2d.dir/src/graphics/texture.cpp.i: cmake_force
@@ -177,7 +192,7 @@ CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj: CMakeFiles/luv2d.dir/flags
 CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj: CMakeFiles/luv2d.dir/includes_CXX.rsp
 CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj: C:/Users/isaias/Documents/victor/luv2d/src/graphics/renderable.cpp
 CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj: CMakeFiles/luv2d.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj -MF CMakeFiles\luv2d.dir\src\graphics\renderable.cpp.obj.d -o CMakeFiles\luv2d.dir\src\graphics\renderable.cpp.obj -c C:\Users\isaias\Documents\victor\luv2d\src\graphics\renderable.cpp
 
 CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.i: cmake_force
@@ -192,7 +207,7 @@ CMakeFiles/luv2d.dir/src/events/eventManager.cpp.obj: CMakeFiles/luv2d.dir/flags
 CMakeFiles/luv2d.dir/src/events/eventManager.cpp.obj: CMakeFiles/luv2d.dir/includes_CXX.rsp
 CMakeFiles/luv2d.dir/src/events/eventManager.cpp.obj: C:/Users/isaias/Documents/victor/luv2d/src/events/eventManager.cpp
 CMakeFiles/luv2d.dir/src/events/eventManager.cpp.obj: CMakeFiles/luv2d.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/luv2d.dir/src/events/eventManager.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/luv2d.dir/src/events/eventManager.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/luv2d.dir/src/events/eventManager.cpp.obj -MF CMakeFiles\luv2d.dir\src\events\eventManager.cpp.obj.d -o CMakeFiles\luv2d.dir\src\events\eventManager.cpp.obj -c C:\Users\isaias\Documents\victor\luv2d\src\events\eventManager.cpp
 
 CMakeFiles/luv2d.dir/src/events/eventManager.cpp.i: cmake_force
@@ -207,7 +222,7 @@ CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.obj: CMakeFiles/luv2d.dir/flags.mak
 CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.obj: CMakeFiles/luv2d.dir/includes_CXX.rsp
 CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.obj: C:/Users/isaias/Documents/victor/luv2d/src/events/keyEvent.cpp
 CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.obj: CMakeFiles/luv2d.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.obj -MF CMakeFiles\luv2d.dir\src\events\keyEvent.cpp.obj.d -o CMakeFiles\luv2d.dir\src\events\keyEvent.cpp.obj -c C:\Users\isaias\Documents\victor\luv2d\src\events\keyEvent.cpp
 
 CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.i: cmake_force
@@ -222,7 +237,7 @@ CMakeFiles/luv2d.dir/src/events/applicationEvent.cpp.obj: CMakeFiles/luv2d.dir/f
 CMakeFiles/luv2d.dir/src/events/applicationEvent.cpp.obj: CMakeFiles/luv2d.dir/includes_CXX.rsp
 CMakeFiles/luv2d.dir/src/events/applicationEvent.cpp.obj: C:/Users/isaias/Documents/victor/luv2d/src/events/applicationEvent.cpp
 CMakeFiles/luv2d.dir/src/events/applicationEvent.cpp.obj: CMakeFiles/luv2d.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/luv2d.dir/src/events/applicationEvent.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/luv2d.dir/src/events/applicationEvent.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/luv2d.dir/src/events/applicationEvent.cpp.obj -MF CMakeFiles\luv2d.dir\src\events\applicationEvent.cpp.obj.d -o CMakeFiles\luv2d.dir\src\events\applicationEvent.cpp.obj -c C:\Users\isaias\Documents\victor\luv2d\src\events\applicationEvent.cpp
 
 CMakeFiles/luv2d.dir/src/events/applicationEvent.cpp.i: cmake_force
@@ -237,7 +252,7 @@ CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj: CMakeFiles/luv2d.dir/flags.m
 CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj: CMakeFiles/luv2d.dir/includes_CXX.rsp
 CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj: C:/Users/isaias/Documents/victor/luv2d/src/events/mouseEvent.cpp
 CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj: CMakeFiles/luv2d.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj -MF CMakeFiles\luv2d.dir\src\events\mouseEvent.cpp.obj.d -o CMakeFiles\luv2d.dir\src\events\mouseEvent.cpp.obj -c C:\Users\isaias\Documents\victor\luv2d\src\events\mouseEvent.cpp
 
 CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.i: cmake_force
@@ -248,26 +263,26 @@ CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.s"
 	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\isaias\Documents\victor\luv2d\src\events\mouseEvent.cpp -o CMakeFiles\luv2d.dir\src\events\mouseEvent.cpp.s
 
-CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj: CMakeFiles/luv2d.dir/flags.make
-CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj: CMakeFiles/luv2d.dir/includes_C.rsp
-CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj: C:/Users/isaias/Documents/victor/luv2d/thirdparty/glad/glad.c
-CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj: CMakeFiles/luv2d.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj -MF CMakeFiles\luv2d.dir\thirdparty\glad\glad.c.obj.d -o CMakeFiles\luv2d.dir\thirdparty\glad\glad.c.obj -c C:\Users\isaias\Documents\victor\luv2d\thirdparty\glad\glad.c
+CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj: CMakeFiles/luv2d.dir/flags.make
+CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj: CMakeFiles/luv2d.dir/includes_CXX.rsp
+CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj: C:/Users/isaias/Documents/victor/luv2d/src/assets/assetsManager.cpp
+CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj: CMakeFiles/luv2d.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj"
+	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj -MF CMakeFiles\luv2d.dir\src\assets\assetsManager.cpp.obj.d -o CMakeFiles\luv2d.dir\src\assets\assetsManager.cpp.obj -c C:\Users\isaias\Documents\victor\luv2d\src\assets\assetsManager.cpp
 
-CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.i"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\isaias\Documents\victor\luv2d\thirdparty\glad\glad.c > CMakeFiles\luv2d.dir\thirdparty\glad\glad.c.i
+CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.i"
+	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\isaias\Documents\victor\luv2d\src\assets\assetsManager.cpp > CMakeFiles\luv2d.dir\src\assets\assetsManager.cpp.i
 
-CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.s"
-	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\isaias\Documents\victor\luv2d\thirdparty\glad\glad.c -o CMakeFiles\luv2d.dir\thirdparty\glad\glad.c.s
+CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.s"
+	C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\isaias\Documents\victor\luv2d\src\assets\assetsManager.cpp -o CMakeFiles\luv2d.dir\src\assets\assetsManager.cpp.s
 
 CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj: CMakeFiles/luv2d.dir/flags.make
 CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj: CMakeFiles/luv2d.dir/includes_C.rsp
 CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj: C:/Users/isaias/Documents/victor/luv2d/thirdparty/stb_image/stb_image_implementation.c
 CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj: CMakeFiles/luv2d.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj"
 	C:\MinGW\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj -MF CMakeFiles\luv2d.dir\thirdparty\stb_image\stb_image_implementation.c.obj.d -o CMakeFiles\luv2d.dir\thirdparty\stb_image\stb_image_implementation.c.obj -c C:\Users\isaias\Documents\victor\luv2d\thirdparty\stb_image\stb_image_implementation.c
 
 CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.i: cmake_force
@@ -285,6 +300,7 @@ luv2d_OBJECTS = \
 "CMakeFiles/luv2d.dir/src/engine.cpp.obj" \
 "CMakeFiles/luv2d.dir/src/core/clock.cpp.obj" \
 "CMakeFiles/luv2d.dir/src/core/camera.cpp.obj" \
+"CMakeFiles/luv2d.dir/src/core/arena.cpp.obj" \
 "CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj" \
 "CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj" \
 "CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj" \
@@ -292,7 +308,7 @@ luv2d_OBJECTS = \
 "CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.obj" \
 "CMakeFiles/luv2d.dir/src/events/applicationEvent.cpp.obj" \
 "CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj" \
-"CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj" \
+"CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj" \
 "CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj"
 
 # External object files for target luv2d
@@ -303,6 +319,7 @@ luv2d.exe: CMakeFiles/luv2d.dir/src/window.cpp.obj
 luv2d.exe: CMakeFiles/luv2d.dir/src/engine.cpp.obj
 luv2d.exe: CMakeFiles/luv2d.dir/src/core/clock.cpp.obj
 luv2d.exe: CMakeFiles/luv2d.dir/src/core/camera.cpp.obj
+luv2d.exe: CMakeFiles/luv2d.dir/src/core/arena.cpp.obj
 luv2d.exe: CMakeFiles/luv2d.dir/src/graphics/renderer.cpp.obj
 luv2d.exe: CMakeFiles/luv2d.dir/src/graphics/texture.cpp.obj
 luv2d.exe: CMakeFiles/luv2d.dir/src/graphics/renderable.cpp.obj
@@ -310,7 +327,7 @@ luv2d.exe: CMakeFiles/luv2d.dir/src/events/eventManager.cpp.obj
 luv2d.exe: CMakeFiles/luv2d.dir/src/events/keyEvent.cpp.obj
 luv2d.exe: CMakeFiles/luv2d.dir/src/events/applicationEvent.cpp.obj
 luv2d.exe: CMakeFiles/luv2d.dir/src/events/mouseEvent.cpp.obj
-luv2d.exe: CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj
+luv2d.exe: CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj
 luv2d.exe: CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj
 luv2d.exe: CMakeFiles/luv2d.dir/build.make
 luv2d.exe: lib/SDL2.lib
@@ -318,7 +335,7 @@ luv2d.exe: lib/SDL2main.lib
 luv2d.exe: CMakeFiles/luv2d.dir/linkLibs.rsp
 luv2d.exe: CMakeFiles/luv2d.dir/objects1.rsp
 luv2d.exe: CMakeFiles/luv2d.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable luv2d.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\isaias\Documents\victor\luv2d\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable luv2d.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\luv2d.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

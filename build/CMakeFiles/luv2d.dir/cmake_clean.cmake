@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj"
+  "CMakeFiles/luv2d.dir/src/assets/assetsManager.cpp.obj.d"
+  "CMakeFiles/luv2d.dir/src/core/arena.cpp.obj"
+  "CMakeFiles/luv2d.dir/src/core/arena.cpp.obj.d"
   "CMakeFiles/luv2d.dir/src/core/camera.cpp.obj"
   "CMakeFiles/luv2d.dir/src/core/camera.cpp.obj.d"
   "CMakeFiles/luv2d.dir/src/core/clock.cpp.obj"
@@ -23,8 +27,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/luv2d.dir/src/main.cpp.obj.d"
   "CMakeFiles/luv2d.dir/src/window.cpp.obj"
   "CMakeFiles/luv2d.dir/src/window.cpp.obj.d"
-  "CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj"
-  "CMakeFiles/luv2d.dir/thirdparty/glad/glad.c.obj.d"
   "CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj"
   "CMakeFiles/luv2d.dir/thirdparty/stb_image/stb_image_implementation.c.obj.d"
   "libluv2d.dll.a"
