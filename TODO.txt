@@ -14,12 +14,13 @@
   [x] Clock 
   [x] Camera
 	[x] Memory arenas
-  [] ECS < 3
+  [] ECS < 1
   [x] Assets Manager
   [] Text rendering
 -- Others
-  [] Exporting engine to be used as dll
+  [x] Exporting engine to be used as dll
   [] Some documentation
 -- Consider
   [] Multi-thread engine (only for the hard boiss)
-	[] Maybe provide some UI creation
+	[] Audio system
+  [] Maybe provide some UI creation

@@ -4,7 +4,7 @@
 
 namespace luv
 {
-  struct EventManager
+  struct LUV2D_ENGINE_API EventManager
   {
   private:
     Event event;

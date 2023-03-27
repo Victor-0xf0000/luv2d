@@ -1,9 +1,11 @@
 #pragma once
 
+#include <engine/platform.hpp>
+
 namespace luv
 {
   // Handles window resized and window close
-  struct ApplicationEvent
+  struct LUV2D_ENGINE_API ApplicationEvent
   {
     int new_width, new_height;
     

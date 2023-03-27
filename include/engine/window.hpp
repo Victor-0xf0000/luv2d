@@ -1,11 +1,13 @@
 #pragma once
 
+#include <engine/platform.hpp>
+
 #include <SDL2/SDL.h>
 #include <string>
 
 namespace luv
 {
-  struct Window
+  struct LUV2D_ENGINE_API Window
   {
   private:
     SDL_Window* sdl_window_ptr;

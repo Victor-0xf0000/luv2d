@@ -1,6 +1,7 @@
 #pragma once
 
 #include <engine/core/arena.hpp>
+#include <engine/platform.hpp>
 #include <stdlib.h>
 #include <string.h>
 
@@ -20,7 +21,7 @@ namespace luv
   };
 
   template<typename T>
-  struct Handle
+  struct LUV2D_ENGINE_API Handle
   {
   public:
     int slotIndex;
@@ -43,7 +44,7 @@ namespace luv
   };
 
   template<typename T>
-  struct HandleList
+  struct LUV2D_ENGINE_API HandleList
   {
   private:
     luv::Arena slots;

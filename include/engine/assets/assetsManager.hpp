@@ -1,6 +1,7 @@
 #pragma once
 
 #include <engine/base.hpp>
+#include <engine/platform.hpp>
 #include <engine/core/handlelist.hpp>
 
 #include <unordered_map>
@@ -12,7 +13,7 @@ namespace luv
   struct Texture;
   struct Renderer;
 
-  struct TexturePath
+  struct LUV2D_ENGINE_API TexturePath
   {
     std::string name;
     std::string path;
@@ -23,13 +24,13 @@ namespace luv
   //  luv::Asset asset;
   //};
   
-  struct TexturePair
+  struct LUV2D_ENGINE_API TexturePair
   {
     std::string name;
     luv::Texture* texture;
   };
 
-  struct AssetsManager
+  struct LUV2D_ENGINE_API AssetsManager
   {
   private:
     std::unordered_map<std::string, luv::Ref<Texture>> textures; 

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <engine/platform.hpp>
 #include <engine/base.hpp>
 #include <engine/events/applicationEvent.hpp>
 #include <engine/events/keyEvent.hpp>
@@ -30,7 +31,7 @@ namespace luv
   
   struct EventManager;
 
-  struct Event
+  struct LUV2D_ENGINE_API Event
   {
     friend EventManager;
   private:

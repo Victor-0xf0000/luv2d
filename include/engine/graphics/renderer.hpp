@@ -17,7 +17,7 @@ namespace luv
   struct Camera;
   struct Texture;
   struct Renderable;
-  struct Renderer
+  struct LUV2D_ENGINE_API Renderer
   {
   private:
     luv::Ref<Window> window_ptr;

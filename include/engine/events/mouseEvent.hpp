@@ -1,12 +1,13 @@
 #pragma once
 
 #include <engine/Core/mouse.hpp>
+#include <engine/platform.hpp>
 
 #include <array>
 
 namespace luv
 {
-  struct MouseEvent
+  struct LUV2D_ENGINE_API MouseEvent
   {
     std::array<bool, 3> mouseButtons;
     std::array<bool, 3> prevMouseButtons;

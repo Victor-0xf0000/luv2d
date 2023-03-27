@@ -3,7 +3,7 @@
 namespace luv
 {
   static float inv255f = 1.f / 255.f;
-	struct Color
+	struct LUV2D_ENGINE_API Color
 	{
 		int r;
 		int g;

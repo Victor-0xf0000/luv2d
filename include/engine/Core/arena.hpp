@@ -1,10 +1,11 @@
 #pragma once
 
 #include <stdlib.h>
+#include <engine/platform.hpp>
 
 namespace luv
 {
-  struct Arena
+  struct LUV2D_ENGINE_API Arena
   {
   private:
     char* data;

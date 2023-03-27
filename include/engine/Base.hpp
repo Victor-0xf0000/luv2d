@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <cstdint>
+#include <engine/platform.hpp>
 
 #define BIT(x) (1 << x)
 #define BIG_ENDIAN 0
@@ -34,7 +35,7 @@ namespace luv
     return std::make_shared<T>(std::forward<Args>(args)...);
   }
 
-  constexpr int testByteOrder()
+  constexpr LUV2D_ENGINE_API int testByteOrder()
   {
     i16 word = 0x0001;
     i8* byte = (i8*) &word;

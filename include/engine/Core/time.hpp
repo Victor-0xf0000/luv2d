@@ -1,10 +1,11 @@
 #pragma once
 
+#include <engine/platform.hpp>
 #include <engine/base.hpp>
 
 namespace luv
 {
-  struct Time
+  struct LUV2D_ENGINE_API Time
   {
   private:
     u64 in_milliseconds;

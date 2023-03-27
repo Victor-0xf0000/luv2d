@@ -3,12 +3,13 @@
 #include <engine/base.hpp>
 #include <engine/graphics/renderCmd.hpp>
 #include <engine/core/luv_math.hpp>
+#include <engine/platform.hpp>
 
 namespace luv
 {
   struct Texture;
   struct Camera;
-  struct Renderable
+  struct LUV2D_ENGINE_API Renderable
   {
   private:
     luv::Ref<luv::Texture> texture;

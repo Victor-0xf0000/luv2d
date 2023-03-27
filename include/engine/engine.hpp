@@ -1,6 +1,7 @@
 #pragma once
 
 #include <engine/base.hpp>
+#include <engine/platform.hpp>
 
 namespace luv
 {
@@ -10,7 +11,7 @@ namespace luv
   struct Clock;
   struct Camera;
   struct AssetsManager;
-  struct Engine
+  struct LUV2D_ENGINE_API Engine
   {
   private:
     Ref<luv::Window> window;

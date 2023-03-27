@@ -1,10 +1,12 @@
 #pragma once
 
+#include <engine/platform.hpp>
+
 #include <engine/core/luv_math.hpp>
 
 namespace luv
 {
-  struct Camera
+  struct LUV2D_ENGINE_API Camera
   {
   private:
     vec2f world_pos;

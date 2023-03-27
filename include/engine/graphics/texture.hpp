@@ -3,11 +3,12 @@
 #include <SDL2/SDL.h>
 
 #include <engine/base.hpp>
+#include <engine/platform.hpp>
 
 namespace luv
 {
 	struct Renderer;
-	struct Texture
+	struct LUV2D_ENGINE_API Texture
 	{
 		friend Renderer;
 	private:

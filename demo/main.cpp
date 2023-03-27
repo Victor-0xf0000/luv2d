@@ -7,7 +7,7 @@ int main(int argc, char** argv)
 {
   luv::Engine engine;
   engine.start();
-  engine.getWindow()->change_title("luvely test");
+  engine.getWindow()->change_title("luvely demo");
   engine.getWindow()->set_resizable(false);
   engine.getRenderer()->set_vsync(true);  
   engine.getCamera()->set_min_zoom(0.7f);
@@ -16,12 +16,12 @@ int main(int argc, char** argv)
   luv::Time time = luv::Time::seconds(0.f);
   
   engine.getAssetsManager()->loadTextures({
-      {"test", "data/test.png"},
-      {"test2", "data/test2.png"}
+      {"test", "assets/test.png"},
+      {"test2", "assets/test2.png"}
   });
   
   luv::Ref<luv::Renderable> renderable = luv::createRef<luv::Renderable>();
-  renderable->set_texture(engine.getAssetsManager()->getTexture("test2"));
+  renderable->set_texture(engine.getAssetsManager()->getTexture("test"));
   renderable->set_size({64.f, 64.f});
   renderable->set_pos({0.f, 0.f});
   renderable->set_scale({2.f, 2.f});

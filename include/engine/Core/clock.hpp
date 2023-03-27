@@ -1,11 +1,12 @@
 #pragma once
 
 #include <engine/core/time.hpp>
+#include <engine/platform.hpp>
 
 namespace luv
 {
   struct Engine;
-  struct Clock
+  struct LUV2D_ENGINE_API Clock
   {
     friend Engine;
   public:
