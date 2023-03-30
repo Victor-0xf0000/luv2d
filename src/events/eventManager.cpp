@@ -103,6 +103,5 @@ void luv::EventManager::update_events()
 
 luv::Event luv::EventManager::getEvent()
 {
-  this->update_events();
   return this->event;
 }

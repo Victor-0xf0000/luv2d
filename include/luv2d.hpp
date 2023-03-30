@@ -1,7 +1,5 @@
 // SDL2
-// TODO: remove sdl2 header, user shouldn't want to use sdl
 #define SDL_MAIN_HANDLED
-#include <SDL2/SDL.h>
 // graphics
 #include <engine/graphics/renderer.hpp>
 #include <engine/graphics/texture.hpp>
@@ -18,9 +16,8 @@
 #include <engine/core/camera.hpp>
 #include <engine/core/time.hpp>
 #include <engine/core/luv_math.hpp>
-#include <engine/core/handleList.hpp>
 // engine
-#include <engine/engine.hpp>
 #include <engine/window.hpp>
+#include <engine/application.hpp>
 // assets
 #include <engine/assets/assetsManager.hpp>

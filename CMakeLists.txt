@@ -20,6 +20,7 @@ set(SOURCE_PATH "${CMAKE_CURRENT_SOURCE_DIR}")
 add_library(luv2d SHARED
   src/window.cpp
   src/engine.cpp
+  src/application.cpp
   src/core/clock.cpp
   src/core/camera.cpp
   src/core/arena.cpp

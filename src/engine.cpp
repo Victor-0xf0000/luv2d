@@ -19,7 +19,7 @@ luv::Engine::Engine()
 
 luv::Engine::~Engine()
 {
-
+  printf("Destroying engine\n");
 }
 
 void luv::Engine::start()
@@ -37,32 +37,8 @@ void luv::Engine::start()
   this->assetsManager->create(this->renderer);
 }
 
-luv::Window* luv::Engine::getWindow()
+void luv::Engine::tick()
 {
-  return this->window.get();
-}
-
-luv::Renderer* luv::Engine::getRenderer()
-{
-  return this->renderer.get();
-}
-
-luv::EventManager* luv::Engine::getEventManager()
-{
-  return this->eventManager.get();
-}
-
-luv::Clock* luv::Engine::getClock()
-{
-  return this->clock.get();
-}
-
-luv::Camera* luv::Engine::getCamera()
-{
-  return this->camera.get();
-}
-
-luv::AssetsManager* luv::Engine::getAssetsManager()
-{
-  return this->assetsManager.get();
+  this->clock->tick();
+  this->eventManager->update_events();
 }
