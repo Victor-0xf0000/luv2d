@@ -1,5 +1,7 @@
 #include <engine/application.hpp>
-
+#include <engine/graphics/renderer.hpp>
+#include <engine/core/camera.hpp>
+#include <engine/window.hpp>
 
 luv::Application::Application()
 {
@@ -16,6 +18,9 @@ void luv::Application::init()
   {
     this->engine->tick();
     this->onTick();
+    this->Renderer()->begin_render();
+    this->onRender();
+    this->Renderer()->end_render();
   }
 }
 

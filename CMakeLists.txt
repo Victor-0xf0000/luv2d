@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(luv2d)
+set(CMAKE_CXX_STANDARD 17)
+
+project(luv2d LANGUAGES CXX)
 
 string(TOLOWER ${CMAKE_SYSTEM_NAME} PLATFORM)
 
@@ -24,9 +26,11 @@ add_library(luv2d SHARED
   src/core/clock.cpp
   src/core/camera.cpp
   src/core/arena.cpp
+  src/core/luv_math.cpp
   # graphics
   src/graphics/renderer.cpp
 	src/graphics/texture.cpp
+  src/graphics/font.cpp
   src/graphics/renderable.cpp
 	# events
   src/events/eventManager.cpp
@@ -37,6 +41,7 @@ add_library(luv2d SHARED
   src/assets/assetsManager.cpp
   # thirdparty
   thirdparty/stb_image/stb_image_implementation.c
+  thirdparty/stb_truetype/stb_truetype_implementation.c
   )
 target_include_directories(luv2d PUBLIC include)
 target_include_directories(luv2d PUBLIC thirdparty)
@@ -83,11 +88,15 @@ add_custom_command(TARGET luv2d POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_directory ${SOURCE_PATH}/misc/data ${OUTPUT_DIR}/bin/assets)
 
 #
-# DEMO
+# GAME TEST
 #
 
-project(demo)
-add_executable(demo
-  demo/main.cpp)
-target_link_libraries(demo PRIVATE luv2d)
-include_directories(demo PRIVATE include/)
+project(test)
+add_executable(test 
+  examples/platform_game/main.cpp
+  examples/platform_game/game.cpp
+  examples/platform_game/tileset.cpp
+)
+target_link_libraries(test PRIVATE luv2d)
+target_include_directories(test PRIVATE include/)
+target_include_directories(test PRIVATE examples/platform_game/)

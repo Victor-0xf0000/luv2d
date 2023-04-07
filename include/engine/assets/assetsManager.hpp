@@ -43,7 +43,7 @@ namespace luv
     
     luv::Ref<luv::Texture> loadTexture(std::string name, std::string path);
     void loadTextures(std::vector<luv::TexturePath> paths);
-    luv::Ref<luv::Texture> getTexture(std::string name);
+    luv::Texture* getTexture(std::string name);
     
     void unloadTexture(std::string name);
   };

@@ -30,7 +30,7 @@ void luv::Engine::start()
 	}
   
   this->window->create("Luv2D", 800, 600);
-  this->camera->create(this->window->get_width(), this->window->get_height());
+  this->camera->create(this->window);
   this->renderer->create(this->window, this->camera);
   this->eventManager->create();
   this->clock->create();

@@ -15,4 +15,6 @@ namespace luv
     vec2f pos;
     int width, height;
   };
+
+  LUV2D_ENGINE_API float absf(float n);
 }

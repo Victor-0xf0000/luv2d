@@ -12,7 +12,7 @@ void luv::Clock::create()
 {
   this->dt = Time::seconds(0.f); 
   this->lt = Time::seconds(0.f);
-  this->currTime = Time::milliseconds(SDL_GetTicks());
+  this->currTime = Time::seconds((u64)SDL_GetPerformanceCounter());
 }
 
 luv::Time luv::Clock::getDeltaTime() const

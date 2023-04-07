@@ -63,6 +63,7 @@ void luv::Window::resize(int width, int height)
 
   this->width = width;
   this->height = height;
+  SDL_SetWindowSize(this->sdl_window_ptr, width, height);
 }
 
 std::string luv::Window::get_title() const

@@ -5,6 +5,7 @@
 #include <engine/graphics/texture.hpp>
 #include <engine/graphics/color.hpp>
 #include <engine/graphics/renderable.hpp>
+#include <engine/graphics/font.hpp>
 // events
 #include <engine/events/keyEvent.hpp>
 #include <engine/events/event.hpp>

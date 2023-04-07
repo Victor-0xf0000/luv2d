@@ -1,6 +1,8 @@
 -- Engine
   [x] Window
+    [] Icon
   [x] Renderer
+    [] Blend function
   [] Event
     [x] Application events
     [] Key events
@@ -13,10 +15,16 @@
   [] Sprite batch (drawing multiple sprites given a single texture)
   [x] Clock 
   [x] Camera
-	[x] Memory arenas
-  [] ECS < 1
+    [] Better zoom
+  [x] Memory arenas
+  [x] ECS -- Using enTT
   [x] Assets Manager
-  [] Text rendering
+  [] File struct
+  [] Font struct
+    [] TODO: Use your own file struct
+    [] Text rendering
+  [] Random numbers generator
+  [] Memory management
 -- Others
   [x] Exporting engine to be used as dll
   [] Some documentation

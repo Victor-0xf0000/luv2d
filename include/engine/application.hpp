@@ -17,7 +17,8 @@ namespace luv
 
     virtual void onStart() {}
     virtual void onTick() {}
-    
+    virtual void onRender() {}
+
     void init();
     void quit();
 

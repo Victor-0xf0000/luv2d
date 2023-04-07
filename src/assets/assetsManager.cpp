@@ -32,9 +32,9 @@ void luv::AssetsManager::loadTextures(std::vector<luv::TexturePath> paths)
   }
 }
 
-luv::Ref<luv::Texture> luv::AssetsManager::getTexture(std::string name)
+luv::Texture* luv::AssetsManager::getTexture(std::string name)
 {
-  return this->textures.at(name);
+  return this->textures.at(name).get();
 }
 
 void luv::AssetsManager::unloadTexture(std::string name)

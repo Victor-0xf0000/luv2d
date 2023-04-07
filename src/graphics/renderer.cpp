@@ -1,6 +1,7 @@
 #include <engine/graphics/renderer.hpp>
 #include <engine/graphics/color.hpp>
 #include <engine/graphics/texture.hpp>
+#include <engine/graphics/font.hpp>
 #include <engine/graphics/renderable.hpp>
 
 #include <engine/core/camera.hpp>
@@ -22,9 +23,6 @@ void luv::Renderer::create(Ref<luv::Window> window, Ref<luv::Camera> camera)
 {
   this->window_ptr = window;
   this->camera_ptr = camera;
-  
-  this->camera_ptr->set_max_zoom(3.f);
-  this->camera_ptr->set_min_zoom(0.7f);
 
   this->vsync = true;
   this->background_color = luv::Color(40, 40, 40, 255);
@@ -68,6 +66,14 @@ luv::Ref<luv::Texture> luv::Renderer::load_texture(const char* path)
   return texture;
 }
 
+luv::Ref<luv::Font> luv::Renderer::load_font(const char* path, int size)
+{
+  luv::Ref<luv::Font> font = luv::createRef<luv::Font>();
+  if (!font->loadFromFile(this->sdl_renderer_ptr, path, size))
+    return nullptr;
+  return font;
+}
+
 void luv::Renderer::begin_render()
 {
   SDL_SetRenderDrawColor(this->sdl_renderer_ptr, this->background_color.r, this->background_color.g, 
@@ -75,13 +81,32 @@ void luv::Renderer::begin_render()
   SDL_RenderClear(this->sdl_renderer_ptr);
 }
 
-void luv::Renderer::render_texture(const luv::Ref<luv::Texture>& texture, int x, int y, int width, int height)
+void luv::Renderer::render_texture(const luv::Texture* texture, luv::Rect dst)
 {
-  luv::Rect rect = this->camera_ptr->convert_rect_to_screen(
-      {x, y, width, height});
-  SDL_Rect src {0, 0, width, height};
-  SDL_Rect dst {rect.pos.x, rect.pos.y, rect.width, rect.height};
-  SDL_RenderCopy(this->sdl_renderer_ptr, texture->sdl_texture_ptr, &src, &dst);
+  luv::Rect nDstrect = dst;
+  if (this->renderViewMode == luv::RenderViewMode::RVM_CAMERAVIEW)
+  {
+    nDstrect = this->camera_ptr->convert_rect_to_screen(
+      {dst.pos.x, dst.pos.y, dst.width, dst.height});
+  }
+ 
+  SDL_Rect sdldst {nDstrect.pos.x, nDstrect.pos.y, nDstrect.width, nDstrect.height};
+  
+  SDL_RenderCopy(this->sdl_renderer_ptr, texture->sdl_texture_ptr, NULL, &sdldst);
+}
+void luv::Renderer::render_texture(const Texture* texture, luv::Rect src, luv::Rect dst)
+{
+  luv::Rect nDstrect = dst;
+  if (this->renderViewMode == luv::RenderViewMode::RVM_CAMERAVIEW)
+  {
+    nDstrect = this->camera_ptr->convert_rect_to_screen(
+      {dst.pos.x, dst.pos.y, dst.width, dst.height});
+  }
+
+  SDL_Rect sdlsrc {src.pos.x, src.pos.y, src.width, src.height};
+  SDL_Rect sdldst {nDstrect.pos.x, nDstrect.pos.y, nDstrect.width, nDstrect.height};
+
+  SDL_RenderCopy(this->sdl_renderer_ptr, texture->sdl_texture_ptr, &sdlsrc, &sdldst);
 }
 
 void luv::Renderer::render_sprite(const luv::Ref<luv::Renderable>& renderable)
@@ -92,20 +117,31 @@ void luv::Renderer::render_sprite(const luv::Ref<luv::Renderable>& renderable)
   ));
 }
 
-void luv::Renderer::render_quad(luv::Rect rect, std::array<luv::Color, 4> vertexColors)
+void luv::Renderer::render_text(luv::Font* font, luv::vec2f pos, const char* text)
 {
+  font->render(this->sdl_renderer_ptr, pos.x, pos.y, text);
 }
 
 void luv::Renderer::render_quad(luv::Rect rect, luv::Color color)
 {
-  luv::Rect screenRect = this->camera_ptr->convert_rect_to_screen(
+  luv::Rect nRect = rect;
+  if (this->renderViewMode == luv::RenderViewMode::RVM_CAMERAVIEW)
+  {
+    nRect = this->camera_ptr->convert_rect_to_screen(
       {rect.pos.x, rect.pos.y, rect.width, rect.height});
-  SDL_Rect dst {screenRect.pos.x, screenRect.pos.y, screenRect.width, screenRect.height};
+  }
+  SDL_Rect dst {
+    static_cast<int>(nRect.pos.x), 
+    static_cast<int>(nRect.pos.y), nRect.width, nRect.height};
   SDL_SetRenderDrawBlendMode(this->sdl_renderer_ptr, SDL_BLENDMODE_BLEND);
   SDL_SetRenderDrawColor(this->sdl_renderer_ptr, color.r, color.g, color.b, color.a);
   SDL_RenderFillRect(this->sdl_renderer_ptr, &dst);
 }
 
+void luv::Renderer::setRenderViewMode(luv::RenderViewMode renderViewMode)
+{
+  this->renderViewMode = renderViewMode;
+}
 void luv::Renderer::end_render()
 {
   this->run_queue();
@@ -130,9 +166,10 @@ void luv::Renderer::run_queue()
   {
     auto cmd = this->render_commands[i];
     
-    this->render_texture(cmd.texture, 
+    this->render_texture(cmd.texture.get(),{
         cmd.pos.x, cmd.pos.y,
-        cmd.size.x*cmd.scale.x,cmd.size.y*cmd.scale.y);
+        cmd.size.x*cmd.scale.x,cmd.size.y*cmd.scale.y
+    });
   }
   this->cmd_count = 0;
   this->render_commands.clear();
