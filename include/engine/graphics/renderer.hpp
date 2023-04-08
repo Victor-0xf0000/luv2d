@@ -66,6 +66,9 @@ namespace luv
     void render_sprite(const luv::Ref<luv::Renderable>& renderable);
     void render_quad(luv::Rect rect, luv::Color color);
     void render_text(luv::Font* font, luv::vec2f pos, const char* text);
+    void render_quad_text(luv::Font* font, 
+        luv::Rect rect, luv::Color rectColor, 
+        const char* text, luv::Color textColor);
 
     void setRenderViewMode(luv::RenderViewMode renderViewMode);
     void end_render();

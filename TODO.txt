@@ -20,9 +20,9 @@
   [x] ECS -- Using enTT
   [x] Assets Manager
   [] File struct
-  [] Font struct
-    [] TODO: Use your own file struct
-    [] Text rendering
+  [x] Font struct
+    TODO: Use your own file struct
+    [x] Text rendering
   [] Random numbers generator
   [] Memory management
 -- Others

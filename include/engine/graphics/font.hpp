@@ -1,6 +1,7 @@
 #pragma once
 
 #include <engine/platform.hpp>
+#include <engine/graphics/color.hpp>
 
 #include <SDL2/SDL.h>
 #include <stb_truetype/stb_truetype.h>
@@ -27,7 +28,8 @@ namespace luv
     int baseline;
     
     // Meant to be called by the renderer itself
-    void render(SDL_Renderer* renderer, float x, float y, const char* text);
+    void render(SDL_Renderer* renderer, float x, float y, const char* text, luv::Color color);
+    void render(SDL_Renderer* renderer, float x, float y, float max_width, const char* text, luv::Color color);
   public:
     Font();
     ~Font();

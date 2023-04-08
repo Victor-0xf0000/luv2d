@@ -18,5 +18,7 @@ namespace luv
   public:
 		Texture();
 		~Texture();
+    
+    void unload();
   };
 }

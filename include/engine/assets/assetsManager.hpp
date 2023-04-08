@@ -11,6 +11,7 @@
 namespace luv
 {
   struct Texture;
+  struct Font;
   struct Renderer;
 
   struct LUV2D_ENGINE_API TexturePath
@@ -18,22 +19,31 @@ namespace luv
     std::string name;
     std::string path;
   };
-  //struct AssetPair
-  //{
-  //  std::string name;
-  //  luv::Asset asset;
-  //};
+
+  struct LUV2D_ENGINE_API FontPath
+  {
+    std::string name;
+    std::string path;
+    int size;
+  };
   
   struct LUV2D_ENGINE_API TexturePair
   {
     std::string name;
     luv::Texture* texture;
   };
+  
+  struct LUV2D_ENGINE_API FontPair
+  {
+    std::string name;
+    luv::Font* font;
+  };
 
   struct LUV2D_ENGINE_API AssetsManager
   {
   private:
     std::unordered_map<std::string, luv::Ref<Texture>> textures; 
+    std::unordered_map<std::string, luv::Ref<Font>> fonts; 
     luv::Ref<luv::Renderer> renderer_ptr;
   public:
     AssetsManager();
@@ -44,7 +54,11 @@ namespace luv
     luv::Ref<luv::Texture> loadTexture(std::string name, std::string path);
     void loadTextures(std::vector<luv::TexturePath> paths);
     luv::Texture* getTexture(std::string name);
-    
     void unloadTexture(std::string name);
+
+    luv::Ref<luv::Font> loadFont(std::string name, std::string path, int size);
+    void loadFonts(std::vector<luv::FontPath> paths);
+    luv::Font* getFont(std::string name);
+    void unloadFont(std::string name);
   };
 }

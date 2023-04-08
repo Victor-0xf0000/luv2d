@@ -11,6 +11,7 @@ private:
   luv::Ref<TileSet> tileset;
 
   entt::registry registry;
+  entt::entity playerId;
 
   luv::Ref<luv::Font> arialf;
 public:

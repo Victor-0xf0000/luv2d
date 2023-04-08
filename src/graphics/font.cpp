@@ -16,11 +16,10 @@ luv::Font::~Font()
   this->unload();
 }
 
-void luv::Font::render(SDL_Renderer* renderer, float x, float y, const char* text)
+void luv::Font::render(SDL_Renderer* renderer, float x, float y, const char* text, luv::Color color)
 {
-  u32 r, g, b, a;
-  SDL_SetTextureColorMod(this->atlas, 255, 255, 255);
-  SDL_SetTextureAlphaMod(this->atlas, 150);
+  SDL_SetTextureColorMod(this->atlas, color.r, color.g, color.b);
+  SDL_SetTextureAlphaMod(this->atlas, color.a);
   for (int i = 0; text[i]; i++)
   {
     if (text[i] >= 32 && text[i] < 128)
@@ -36,6 +35,34 @@ void luv::Font::render(SDL_Renderer* renderer, float x, float y, const char* tex
       x += info->xadvance;
     }
   }
+}
+
+void luv::Font::render(SDL_Renderer* renderer, float x, float y, float max_width, const char* text, luv::Color color)
+{
+  float initialX = x;
+  float yLine = 1.f;
+  SDL_SetTextureColorMod(this->atlas, color.r, color.g, color.b);
+  SDL_SetTextureAlphaMod(this->atlas, color.a);
+  for (int i = 0; text[i]; i++)
+  {
+    if (text[i] >= 32 && text[i] < 128)
+    {
+      stbtt_packedchar* info = &this->chars[text[i] - 32];
+      if (x+info->xadvance - initialX > max_width)
+      {
+        x = initialX;
+        yLine+=1.f;
+      }
+      SDL_Rect src_rect = {info->x0, info->y0, 
+        info->x1 - info->x0, 
+        info->y1 - info->y0};
+      SDL_Rect dst_rect = {x + info->xoff, y + info->yoff + yLine*this->size, 
+        info->x1 - info->x0, 
+        info->y1 - info->y0};
+      SDL_RenderCopy(renderer, this->atlas, &src_rect, &dst_rect);
+      x += info->xadvance;
+    }
+  }     
 }
 
 void luv::Font::unload()

@@ -18,6 +18,11 @@ luv::Texture::Texture()
 
 luv::Texture::~Texture()
 {
+  this->unload();
+}
+
+void luv::Texture::unload()
+{
   SDL_DestroyTexture(this->sdl_texture_ptr);
 }
 

@@ -12,12 +12,18 @@ void Game::onStart()
 {
   printf("Just started!\n"); 
   
-  this->arialf = this->Renderer()->load_font("assets/arial.ttf", 24);
+  this->arialf = this->AssetsManager()->loadFont("arial", "assets/arial.ttf", 24);
 
-  auto player = player::create(
+  this->playerId = entities::playerCreate(
       this->AssetsManager(),
       this->registry,
       {70.f, 70.f});
+  auto enemySpawner = entities::enemySpawnerCreate(
+      this->registry,
+      {300.f, 90.f},
+      2.f,
+      this->playerId
+  );
 
   int ww = this->Window()->get_width(), wh = this->Window()->get_height();
 
@@ -61,9 +67,13 @@ void Game::onTick()
         tc.pos.y+tc.height/2});
   }
 
-  PlayerSystem::update(dt, e, this->registry);
+  PlayerSystem::update(dt, e, this->Camera(), this->registry);
+  FollowSystem::update(dt, this->registry);
   PhysicsSystem::update(dt, this->registry);
   TileCollisionSystem::update(dt, this->tileset.get(), this->registry);
+  EnemySystem::update(dt, this->AssetsManager(), this->registry);
+  SpellSystem::update(dt, this->registry);
+  HealthSystem::update(dt, this->registry);
 }
 
 void Game::onRender()
@@ -102,14 +112,20 @@ void Game::onRender()
     }, spr.color);
   }
   this->Renderer()->setRenderViewMode(luv::RenderViewMode::RVM_SCREENVIEW);
-  this->Renderer()->render_quad({
+  this->Renderer()->render_quad_text(this->arialf.get(),
+  {
       150.f,
       150.f,
-      (int)this->arialf->measureText("This is a text."),
-      24
-  }, {90, 90, 90, 255});
+      100,
+      60
+  }, {150, 150, 150, 50},
+  "I am not a button",
+  {150, 100, 100, 255});
+
   this->Renderer()->setRenderViewMode(luv::RenderViewMode::RVM_CAMERAVIEW);
-  this->Renderer()->render_text(this->arialf.get(), {150.f, 150.f}, "This is a text.");
+  SpellSystem::render(this->Renderer(), this->registry);
+  HealthSystem::render(this->registry, this->Renderer());
+  PlayerSystem::render(this->Renderer(), this->registry, this->playerId);
 }
 
 

@@ -119,7 +119,7 @@ void luv::Renderer::render_sprite(const luv::Ref<luv::Renderable>& renderable)
 
 void luv::Renderer::render_text(luv::Font* font, luv::vec2f pos, const char* text)
 {
-  font->render(this->sdl_renderer_ptr, pos.x, pos.y, text);
+  font->render(this->sdl_renderer_ptr, pos.x, pos.y, text, {255, 255, 255, 255});
 }
 
 void luv::Renderer::render_quad(luv::Rect rect, luv::Color color)
@@ -136,6 +136,16 @@ void luv::Renderer::render_quad(luv::Rect rect, luv::Color color)
   SDL_SetRenderDrawBlendMode(this->sdl_renderer_ptr, SDL_BLENDMODE_BLEND);
   SDL_SetRenderDrawColor(this->sdl_renderer_ptr, color.r, color.g, color.b, color.a);
   SDL_RenderFillRect(this->sdl_renderer_ptr, &dst);
+}
+void luv::Renderer::render_quad_text(luv::Font* font, 
+    luv::Rect rect, luv::Color rectColor, 
+    const char* text, luv::Color textColor)
+{
+  this->render_quad(rect, rectColor);
+  font->render(this->sdl_renderer_ptr, 
+      rect.pos.x, rect.pos.y, rect.width,
+      text, textColor);
+
 }
 
 void luv::Renderer::setRenderViewMode(luv::RenderViewMode renderViewMode)
