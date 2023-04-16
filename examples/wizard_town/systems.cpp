@@ -1,19 +1,10 @@
-#pragma once
-
-#include <entt/entt.hpp>
+#include <systems.hpp>
+#include <entities.hpp>
+#include <components.hpp>
 #include <luv2d.hpp>
-#include <tileset.hpp>
-#include <algorithm>
-#include <engine/graphics/renderer.hpp>
-#include <cmath>
 
-namespace PhysicsSystem
-{
-  static void update(const float& dt, entt::registry& registry)
-  {
-
-  }
-}
+void PhysicsSystem::update(const float& dt, entt::registry& registry)
+{}
 
 bool aabb(luv::Rect a, luv::Rect b)
 {
@@ -78,7 +69,7 @@ namespace TileCollisionSystem
     return {0.f, 0.f};
   }
 
-  static void update(const float& dt, TileSet* tileset, entt::registry& registry)
+  void update(const float& dt, TileSet* tileset, entt::registry& registry)
   {
     Tile** tiles = tileset->get();
 
@@ -97,7 +88,7 @@ namespace TileCollisionSystem
     for (auto [entity, t, tc] : colliderView.each())
     {
       std::vector<cdata> collisions;
-      for (int i = 0; i < WORLD_TILE_WIDTH*WORLD_TILE_HEIGHT; i++)
+      for (int i = 0; i < tileset->getWidth()*tileset->getHeight(); i++)
       {
         if (tiles[i]->air) continue;
         luv::vec2f tilePos = tileset->indexToPos(i); 
@@ -131,7 +122,7 @@ namespace TileCollisionSystem
 
 namespace PlayerSystem
 {
-  static void update(const float& dt, luv::Event& ev, luv::Camera* camera, entt::registry& registry)
+  void update(const float& dt, luv::Event& ev, luv::Camera* camera, entt::registry& registry)
   {
     const auto& controlView = registry.view<Transform, Control, Health, Mana>();
     for (auto [entity, tc, cc, hc, mc] : controlView.each())
@@ -180,7 +171,7 @@ namespace PlayerSystem
     }
   }
 
-  static void render(luv::Renderer* renderer, entt::registry& registry, entt::entity playerId)
+  void render(luv::Renderer* renderer, entt::registry& registry, entt::entity playerId)
   {
     if (!registry.valid(playerId))
       return;
@@ -213,7 +204,7 @@ namespace HealthSystem
     auto view = registry.view<Health>();
     for (auto [entity, hc] : view.each())
     {
-      if (hc.health <= 0)
+      if (hc.health <= 0 && !hc.invincible)
         registry.destroy(entity);
     }
   }
@@ -347,6 +338,43 @@ namespace EnemySystem
           ec.timeLeftToHit = ec.hitTime;
         }
       }  
+    }
+  }
+}
+
+namespace SpriteSystem
+{
+  void update(const float& dt, entt::registry& registry)
+  {
+    auto view = registry.view<AnimatedSprite>();
+    for (auto [ent, asc] : view.each())
+    {
+      asc.time += dt;
+
+      if (asc.time >= asc.animations[asc.currentAnimation].fps)
+      {
+        asc.currentFrame++;
+        asc.time = 0.f;
+        if (asc.currentFrame >= asc.animations[asc.currentAnimation].indexes.size())
+          asc.currentFrame = 0;
+      }
+    }
+  }
+
+  void render(luv::Renderer* renderer, entt::registry& registry)
+  {
+    auto view = registry.view<Transform, AnimatedSprite>();
+    for (auto [ent, tc, asc] : view.each())
+    {
+      luv::Rect src = {
+        asc.animations[asc.currentAnimation].indexes[asc.currentFrame].x * asc.ssize.x,
+        asc.animations[asc.currentAnimation].indexes[asc.currentFrame].y * asc.ssize.y,
+        static_cast<int>(asc.ssize.x),
+        static_cast<int>(asc.ssize.y)
+      };
+      renderer->render_texture(asc.spritesheet,
+          src,
+          {tc.pos, tc.width, tc.height});
     }
   }
 }

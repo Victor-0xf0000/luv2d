@@ -13,6 +13,7 @@
 // core
 #include <engine/core/keys.hpp>
 #include <engine/core/mouse.hpp>
+#include <engine/core/archive.hpp>
 #include <engine/core/clock.hpp>
 #include <engine/core/camera.hpp>
 #include <engine/core/time.hpp>

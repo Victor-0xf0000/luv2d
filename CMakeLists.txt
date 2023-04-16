@@ -27,6 +27,7 @@ add_library(luv2d SHARED
   src/core/camera.cpp
   src/core/arena.cpp
   src/core/luv_math.cpp
+  src/core/archive.cpp
   # graphics
   src/graphics/renderer.cpp
 	src/graphics/texture.cpp
@@ -91,12 +92,18 @@ add_custom_command(TARGET luv2d POST_BUILD
 # GAME TEST
 #
 
-project(test)
-add_executable(test 
-  examples/platform_game/main.cpp
-  examples/platform_game/game.cpp
-  examples/platform_game/tileset.cpp
-)
-target_link_libraries(test PRIVATE luv2d)
-target_include_directories(test PRIVATE include/)
-target_include_directories(test PRIVATE examples/platform_game/)
+project(wizard-town)
+add_executable(wizard-town 
+  examples/wizard_town/main.cpp
+  examples/wizard_town/game.cpp
+  examples/wizard_town/tileset.cpp
+  examples/wizard_town/rooms.cpp
+  examples/wizard_town/room.cpp
+  examples/wizard_town/systems.cpp
+  examples/wizard_town/entities.cpp
+  examples/wizard_town/components.cpp  
+  examples/wizard_town/uiSystem.cpp
+  )
+target_link_libraries(wizard-town PRIVATE luv2d)
+target_include_directories(wizard-town PRIVATE include/)
+target_include_directories(wizard-town PRIVATE examples/wizard_town/)

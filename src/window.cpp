@@ -33,7 +33,6 @@ SDL_Window* luv::Window::get_sdl_window() const
   return this->sdl_window_ptr;
 }
 
-
 int luv::Window::get_width() const
 {
   return this->width;
@@ -58,9 +57,6 @@ void luv::Window::set_resizable(bool resizable)
 
 void luv::Window::resize(int width, int height)
 {
-  if (!this->resizable)
-    return;
-
   this->width = width;
   this->height = height;
   SDL_SetWindowSize(this->sdl_window_ptr, width, height);
@@ -71,8 +67,8 @@ std::string luv::Window::get_title() const
   return this->title;
 }
 
-void luv::Window::change_title(const char* title)
+void luv::Window::change_title(std::string title)
 {
   this->title = title;
-  SDL_SetWindowTitle(this->sdl_window_ptr, title);
+  SDL_SetWindowTitle(this->sdl_window_ptr, this->title.c_str());
 }

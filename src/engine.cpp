@@ -8,13 +8,13 @@
 #include <engine/assets/assetsManager.hpp>
 
 luv::Engine::Engine()
-  : window(createRef<luv::Window>()),
-  renderer(createRef<luv::Renderer>()),
-  eventManager(createRef<luv::EventManager>()),
-  clock(createRef<luv::Clock>()),
-  camera(createRef<luv::Camera>()),
-  assetsManager(createRef<luv::AssetsManager>())
 {
+  this->window = luv::createRef<luv::Window>();
+  this->renderer = luv::createRef<luv::Renderer>();
+  this->eventManager = luv::createRef<luv::EventManager>();
+  this->clock = luv::createRef<luv::Clock>();
+  this->camera = luv::createRef<luv::Camera>();
+  this->assetsManager = luv::createRef<luv::AssetsManager>();
 }
 
 luv::Engine::~Engine()

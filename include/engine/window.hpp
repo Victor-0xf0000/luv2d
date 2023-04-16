@@ -32,6 +32,6 @@ namespace luv
     void resize(int width, int height);
 
     std::string get_title() const;
-    void change_title(const char* title);
+    void change_title(std::string title);
   };
 }
