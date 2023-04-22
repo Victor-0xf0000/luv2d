@@ -71,7 +71,7 @@ namespace TileCollisionSystem
 
   void update(const float& dt, TileSet* tileset, entt::registry& registry)
   {
-    Tile** tiles = tileset->get();
+    Tile** tiles = tileset->getLayer1();
 
     struct cdata {
       luv::vec2f pvec;
@@ -90,10 +90,13 @@ namespace TileCollisionSystem
       std::vector<cdata> collisions;
       for (int i = 0; i < tileset->getWidth()*tileset->getHeight(); i++)
       {
-        if (tiles[i]->air) continue;
+        if ((tiles[i]->air) || (!tiles[i]->collidable)) continue;
         luv::vec2f tilePos = tileset->indexToPos(i); 
 
-        luv::vec2f pvec = minkowskiCollide({t.pos,t.width,t.height},{
+        luv::vec2f pvec = minkowskiCollide({
+            t.pos.x+tc.origin.x,
+            t.pos.y+tc.origin.y,
+            tc.width,tc.height},{
             tilePos.x*TILE_WIDTH,
             tilePos.y*TILE_HEIGHT,
             TILE_WIDTH,

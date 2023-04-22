@@ -29,10 +29,8 @@ void luv::Texture::unload()
 bool luv::Texture::loadFromFile(SDL_Renderer* sdl_renderer_ptr, 
     const char* path)
 {
-  // TODO: refactor this late, this stinks
   int w, h, componentsPerPixel;
   u8* pixels = stbi_load(path, &w, &h, &componentsPerPixel, 0);
-
   if (!pixels)
   {
     fprintf(stderr, "Error reading %s\n", path);
@@ -57,10 +55,11 @@ bool luv::Texture::loadFromFile(SDL_Renderer* sdl_renderer_ptr,
     return false;
   }
 
-  free(pixels);
+  //free(pixels);
   
   if (surface)
   {
+    // FIXME: Error in here
     this->sdl_texture_ptr = SDL_CreateTextureFromSurface(
         sdl_renderer_ptr,
         surface);

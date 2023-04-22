@@ -67,7 +67,7 @@ template<typename C>
 void loadassetsc(entt::registry& r, luv::AssetsManager* am, luv::Archive& arch)
 {
   std::string trash;
-  arch >> trash; // READING LABEL (TRASH);
+  arch >> trash; // READING LABEL (TRASH)
 
   u32 csize;
   arch >> csize;
@@ -112,11 +112,14 @@ void Room::createEmpty(int width, int height)
       this->assetsManagerPtr,
       {0.f, 0.f}
       );
-  this->tileset->create(width, height);
+  luv::Texture* tilesheet = this->assetsManagerPtr->getTexture("tilesheet");
+  this->tileset->create(width, height, tilesheet);
 }
 
 bool Room::load()
 {
+  luv::Texture* tilesheet = this->assetsManagerPtr->getTexture("tilesheet");
+  
   if (this->path == "assets/rooms/room0")
   {
     this->playerId = entities::playerCreate(
@@ -124,7 +127,7 @@ bool Room::load()
         this->assetsManagerPtr,
         {70.f, 70.f}
         );
-    this->tileset->create(64+1, 16+1);
+    this->tileset->create(64+1, 16+1, tilesheet);
     for (int i = 0; i < 64*16; i++)
     {
       luv::vec2f index = this->tileset->indexToPos(i);
@@ -137,7 +140,10 @@ bool Room::load()
     {
       int index = this->tileset->posToIndex({i, 11.f});
       Tile* tile = this->tileset->getTile(index);
+      tile->ssx = 0;
+      tile->ssy = 0;
       tile->air = false;
+      tile->collidable = true;
     }
     auto enemySpawner = entities::enemySpawnerCreate(
       this->registry,
@@ -154,13 +160,28 @@ bool Room::load()
     arch >> w;
     arch >> h;
     
-    this->tileset->create(w, h);
-    Tile** tiles = this->tileset->get();
+    this->tileset->create(w, h, tilesheet);
+    Tile** tiles = this->tileset->getLayer1();
+    Tile** layer2 = this->tileset->getLayer2();
     for (int i = 0; i < w*h; i++)
     {
-      int air;
+      int air, collidable, ssx, ssy;
       arch >> air;
+      arch >> collidable;
+      arch >> ssx;
+      arch >> ssy;
       tiles[i]->air = air;
+      tiles[i]->ssx = ssx;
+      tiles[i]->ssy = ssy;
+      tiles[i]->collidable = collidable;
+      arch >> air;
+      arch >> collidable;
+      arch >> ssx;
+      arch >> ssy;
+      layer2[i]->air = air;
+      layer2[i]->ssx = ssx;
+      layer2[i]->ssy = ssy;
+      layer2[i]->collidable = collidable;
     }
 
     u32 eSize;
@@ -213,11 +234,16 @@ void Room::save()
   arch << tw << '\n';
   arch << th << '\n';
 
-  Tile** tiles = this->tileset->get();
+  Tile** tiles = this->tileset->getLayer1();
+  Tile** layer2 = this->tileset->getLayer2();
   for (int i = 0; i < this->tileset->getWidth()*this->tileset->getHeight(); i++)
   {
     int isair = (int) tiles[i]->air;
-    arch << isair << '\n'; 
+    int collidable = (int) tiles[i]->collidable;
+    arch << isair << ' ' << collidable << ' ' << tiles[i]->ssx << ' ' << tiles[i]->ssy << '\n';
+    isair = (int) layer2[i]->air;
+    collidable = layer2[i]->collidable;
+    arch << isair << ' ' << collidable << ' ' << layer2[i]->ssx << ' ' << layer2[i]->ssy << '\n';
   }
   u32 entitiesSize = this->registry.size();
   

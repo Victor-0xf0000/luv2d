@@ -13,9 +13,13 @@ private:
   luv::Ref<Rooms> rooms;
   luv::Ref<UiSystem> uiSystem;
   luv::Ref<luv::Font> arialf;
-
+  
+  // Level editor
   bool tilling;
   bool erasing;
+  int currSSX;
+  int currSSY;
+  float ttdtsp; // Time to disappear tilesheet preview, great name isn't it?
 
   int fps;
 public:

@@ -11,6 +11,9 @@ namespace entities
     const int PLAYER_WIDTH = SPR_WIDTH*SCALE;
     const int PLAYER_HEIGHT = SPR_HEIGHT*SCALE;
     
+    const int FOOT_HEIGHT = 25;
+    const int FOOT_BEGIN_Y = PLAYER_HEIGHT - FOOT_HEIGHT;
+
     std::vector<AnimationInfo> aninfo = {
       {{{0.f, 0.f}, {0.f, 1.f}, {0.f, 2.f}, {0.f, 3.f}}, 0.1f},
       {{{1.f, 0.f}, {1.f, 1.f}, {1.f, 2.f}, {1.f, 3.f}}, 0.1f},
@@ -23,7 +26,7 @@ namespace entities
     auto player = registry.create();
     registry.emplace<Transform>(player, pos, PLAYER_WIDTH, PLAYER_HEIGHT);
     registry.emplace<Control>(player, 0.f, 0.f);
-    registry.emplace<TileCollider>(player, 0.f, 0.f, PLAYER_WIDTH, PLAYER_HEIGHT);
+    registry.emplace<TileCollider>(player, 0.f, FOOT_BEGIN_Y, PLAYER_WIDTH, FOOT_HEIGHT);
     registry.emplace<Health>(player, 100, 100, 1);
     registry.emplace<Hitbox>(player, 0.f, 0.f, PLAYER_WIDTH, PLAYER_HEIGHT);
     registry.emplace<Mana>(player, 300, 300, 0.2f, 0.2f);
